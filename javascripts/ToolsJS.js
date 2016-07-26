@@ -5,6 +5,13 @@ function calcuScaleVolume() {
 	covershow.style.display = 'block'; 
 }
 
+function openNewPad(padTitle) { 
+    var cover = document.getElementById("cover"); 
+    var covershow = document.getElementById(padTitle); 
+    cover.style.display = 'block'; 
+    covershow.style.display = 'block'; 
+}
+
 
 function CloseCoverPage(target){
 	var cover = document.getElementById("cover"); 
