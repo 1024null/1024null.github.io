@@ -38,17 +38,20 @@
 		height: 50px;
 		display:block;
 		width: 100%;
-		background: #008b8b;
+		background: #000000;
 		z-index:9;
+		margin:auto;
 		text-align:center;
-		color: #000000;
-		padding: 20px 0 0 0;
+		vertical-align:center;
+		align-content: center;
 	}
 
 	#header{
 		top:0px;
 	}
 	#footer{
+		padding:0px,0px,0px,0px;
+		vertical-align: center;
 		bottom:0px;
 	}
 
@@ -95,8 +98,20 @@
 
 
 
-<div id="header">GALLERY</div>
-<div id="footer"><a href="../index.html">Go back...</a></div>
+<div id="header">
+    <table style="border:none; text-align:center; top:0px; width:100%;height:60px;">
+          	<tr>
+          		<td style="text-align:center; width:50%; vertical-align:center;">
+          			<img style="width:150px; height:52px" src="../resources/UP-W.png" />
+          		</td>
+          		<td style="text-align:center; width:50%; vertical-align:center;">
+          			<img style="width:75px; height:25px" src="../resources/backToIndex.png"  onClick="location.href='../index.html'"/>
+          			<!-- <a href="../index.html" id="backToMainPage">返回</a> -->
+          		</td>
+          	</tr>
+    </table>
+</div>
+<div id="footer"></br><a class="content3" style="color:#FFFFFF; font-weight:lighter;font-size:0.5em;">Hosted on Github</a></div>
 
 <div id="fullpage">
 	<div class="section" id="section0">
@@ -118,7 +133,7 @@
 	    <div class="slide" id="slide2">
 			<h1>Pic2</h1>
 			<p>
-					will be a pic here
+				will be a pic here
 		    </p>
 			 <!-- <img src="imgs/iphone-blue.png" alt="iphone" id="iphone-two" /> -->
 		</div>
