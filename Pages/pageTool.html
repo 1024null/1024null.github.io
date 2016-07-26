@@ -56,42 +56,51 @@ margin-top:-150px;
 background:#FFFFFF; 
 } 
 
-.headrLocal{
-position: fixed;
-height: 60px;
+#header, #footer{
+position:fixed;
+height: 50px;
 display:block;
-width: 960px;
+width: 100%;
 background: #000000;
 z-index:9;
+margin:auto;
 text-align:center;
-padding: 20px 0 0 0;
+vertical-align:center;
+align-content: center;
+}
+
+#header{
 top:0px;
-align-content: center;			    
+}
+#footer{
+padding:0px,0px,0px,0px;
+vertical-align: center;
+bottom:0px;
 }
 
 </style> 
 
 </head> 
 <title>工具集</title>
-<link rel="stylesheet" href="../stylesheets/styles.css">
-<body> 
-<div class="wrapper">
 
-<header class="headerLocal">
-	<div style="margin:auto; text-align:center; vertical-align:center; width:960px; height:60px; background:#000000">
-    	<table style="border:none;  width:960px; height:60px;">
+<link rel="stylesheet" href="../stylesheets/fonts.css">
+
+<body> 
+
+<div id="header">
+    <table style="border:none; text-align:center; top:0px; width:100%;height:60px;">
           	<tr>
-          		<td style="text-align:left; vertical-align:center;">
-          			<img style="width:150px;height:52px" src="../resources/UP-W.png" />
+          		<td style="text-align:center; width:50%; vertical-align:center;">
+          			<img style="width:150px; height:52px" src="../resources/UP-W.png" />
           		</td>
-          		<td style="text-align:right; width:20%;vertical-align:center;">
-          		<img style="width:75px;height:25px" src="../resources/backToIndex.png"  onClick="location.href='../index.html'"/>
+          		<td style="text-align:center; width:50%; vertical-align:center;">
+          			<img style="width:75px; height:25px" src="../resources/backToIndex.png"  onClick="location.href='../index.html'"/>
           			<!-- <a href="../index.html" id="backToMainPage">返回</a> -->
           		</td>
           	</tr>
-        </table>
-    </div>
-</header>
+    </table>
+</div>
+<div id="footer"></br><a class="content3" style="color:#FFFFFF; font-weight:lighter;font-size:0.5em;">Hosted on Github Pages</a></div>
       
 </br>
 </br>
@@ -157,9 +166,9 @@ align-content: center;
 
 
 <div style="margin:auto; width:1000px;">
-	<table style="margin:auto; text-align: center; width:1000px; border:none; ">
+	<table class="content3" style="margin:auto; width:1000px; padding-left: 25px; ">
 		<tr>
-			<td>
+			<td style="padding:15px,15px,0px,0px;">
 				<!--
 				<input type="button" value="常见幅面药水涂布用量" onclick="calcuScaleVolume();"/>
 				<img title="常见幅面药水涂布用量" style="margin:auto; padding-right:400px; " width="300px" height="100px" src="../resources/tool1.jpg" onclick="calcuScaleVolume();" /> 
@@ -177,7 +186,7 @@ align-content: center;
 			-->
 		</tr>
 		<tr>
-			<td>
+			<td style="padding:15px,15px,0px,0px;">
 				<!--
 				<img title="未指定" style="margin:auto;padding-right:400px; " width="300px" height="100px" src="../resources/under-construction.jpg" onclick="openNewPad('underConstruction');" />
     			
@@ -195,13 +204,13 @@ align-content: center;
 			-->
 		</tr>
 		<tr>
-			<td>
+			<td style="padding:15px,15px,0px,0px;">
 				<a onclick="openNewPad('underConstruction');">未指定</a>
 			</td>
 		</tr>
 	</table>
 </div>
-</div>
+
 
 <script src="../javascripts/ToolsJS.js"></script>
 <script src="../javascripts/scale.fix.js"></script>

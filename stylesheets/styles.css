@@ -59,25 +59,7 @@
   src: url('../resources/fonts/SourceHanSans-Light.otf') format('truetype');
 }
 
-#brand {
-	font-family:"Adobe Sans Light";
-	font-weight: bolder;
-}
-.anchor {
-	font-family:"Adobe Sans Light";
-	font-weight: bolder;
-	color:#000000;
-}
-.content3{
-	font-family:"Adobe Sans Light";
-	font-weight: light;
-	color:#000000;
-}
-.content1{
-	font-family:"Adobe Sans Light";
-	font-weight: bold;
-	color:#000000;
-}
+
 
 
 
