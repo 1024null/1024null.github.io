@@ -61,10 +61,23 @@
 
 #brand {
 	font-family:"Adobe Sans Light";
-	font-weight: Light;
-
+	font-weight: bolder;
 }
-
+.anchor {
+	font-family:"Adobe Sans Light";
+	font-weight: bolder;
+	color:#000000;
+}
+.content3{
+	font-family:"Adobe Sans Light";
+	font-weight: light;
+	color:#000000;
+}
+.content1{
+	font-family:"Adobe Sans Light";
+	font-weight: bold;
+	color:#000000;
+}
 
 
 
@@ -83,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, ol, table, pre, dl {
-  margin:0 0 20px;
+  margin:0 0 10px;
 }
 
 h1, h2, h3 {

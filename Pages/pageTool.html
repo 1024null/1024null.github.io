@@ -2,7 +2,8 @@
 <head> 
 <html lang="zh-cn">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1"><style> 
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<style> 
 #cover{ 
 display:none; 
 position:fixed; 
@@ -19,9 +20,9 @@ position:fixed;
 z-index:2; 
 top:50%; 
 left:50%; 
-border:1px solid #000000; 
+border:0px solid #000000; 
 width:500px; 
-height:200px; 
+height:251px; 
 margin-left:-150px; 
 margin-top:-150px; 
 background:#FFFFFF; 
@@ -33,7 +34,7 @@ position:fixed;
 z-index:2; 
 top:50%; 
 left:50%; 
-border:1px solid #000000; 
+border:0px solid #000000; 
 width:500px; 
 height:200px; 
 margin-left:-150px; 
@@ -47,7 +48,7 @@ position:fixed;
 z-index:2; 
 top:50%; 
 left:50%; 
-border:1px solid #000000; 
+border:0px solid #000000; 
 width:500px; 
 height:170px; 
 margin-left:-150px; 
@@ -58,11 +59,12 @@ background:#FFFFFF;
 
 </head> 
 <title>工具集</title>
+<link rel="stylesheet" href="../stylesheets/styles.css">
 <body> 
 <div class="wrapper">
 <header>
 	<div style="margin:auto; text-align: center; width:1000px; height:60px; vertical-align:center; background:#000000">
-    	<table style="width:1000px;height:60px;">
+    	<table style="width:1000px;height:60px;border: 0px;">
           	<tr>
           		<td style="text-align:left; vertical-align:center;">
           			<img style="width:150px;height:52px" src="../resources/UP-W.png" />
@@ -83,19 +85,20 @@ background:#FFFFFF;
 <div id="cover"></div> 
 <div id="underConstruction"> 
     <div style="text-align: center; margin: 15">
-    	<p>还未指定新的工具
+    	<p class="content3">还未指定新的工具
     	<button id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('underConstruction');">关闭</button>    	
 	</div>
 </div>
 <div id="coverShowCalculateScaleVolume"> 
-    <div style="text-align: center;margin: 15">
+    <div class="content3" style="text-align: center;margin: 15">
 
-    	<h3>常见幅面药水涂布用量
-		<table>
+    	<h3 class="content1">常见幅面药水涂布用量</h3>
+    	</br>
+		<table style="border:0px">
 			<tr>
 				<td>单位：</td>
 				<td>
-				<select id="unitSelector">  
+				<select id="unitSelector" class="content3">  
 				<option value ="cm">厘米</option>  
 				<option value ="inch">英寸</option>  
 			    </select>  
@@ -127,10 +130,10 @@ background:#FFFFFF;
 			</tr>
 			<tr>
 				<td style="text-align: center">
-					<button id="btnCalcu" value="btnCalcu" onclick="CalculateVolume();">计算</button>
+					<button id="btnCalcu" class="content3" value="btnCalcu" onclick="CalculateVolume();">计算</button>
 				</td>
 				<td style="text-align: center">
-					<button id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">关闭</button>
+					<button id="btnCloseCoverageCalcuScaleVolume" class="content3" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">关闭</button>
 				</td>
 			</tr>
 		</table>
@@ -139,11 +142,15 @@ background:#FFFFFF;
 
 
 <div style="margin:auto; width:1000px;">
-	<table style="margin:auto; text-align: center; width:1000px;">
+	<table style="margin:auto; text-align: center; width:1000px; border:0px; ">
 		<tr>
 			<td>
-				<!-- <input type="button" value="常见幅面药水涂布用量" onclick="calcuScaleVolume();"/> -->
-				<img title="常见幅面药水涂布用量" style="margin:auto; padding-right:400px; " width="300px" height="100px" src="../resources/tool1.jpg" onclick="calcuScaleVolume();" />
+				<!--
+				<input type="button" value="常见幅面药水涂布用量" onclick="calcuScaleVolume();"/>
+				<img title="常见幅面药水涂布用量" style="margin:auto; padding-right:400px; " width="300px" height="100px" src="../resources/tool1.jpg" onclick="calcuScaleVolume();" /> 
+				-->
+				<a onclick="calcuScaleVolume();">常见幅面药水涂布用量</a>
+
 			</td>
 			<!-- 
 			<td>
@@ -156,7 +163,12 @@ background:#FFFFFF;
 		</tr>
 		<tr>
 			<td>
+				<!--
 				<img title="未指定" style="margin:auto;padding-right:400px; " width="300px" height="100px" src="../resources/under-construction.jpg" onclick="openNewPad('underConstruction');" />
+    			
+				<input type="button" value="未指定" onclick="openNewPad('underConstruction');"/>
+				-->
+				<a onclick="openNewPad('underConstruction');">未指定</a>
 			</td>
 			<!-- 
 			<td>
@@ -169,7 +181,7 @@ background:#FFFFFF;
 		</tr>
 		<tr>
 			<td>
-				<img title="未指定" style="margin:auto;padding-right:400px " width="300px" height="100px" src="../resources/under-construction.jpg" onclick="openNewPad('underConstruction');" />
+				<a onclick="openNewPad('underConstruction');">未指定</a>
 			</td>
 		</tr>
 	</table>
