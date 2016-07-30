@@ -61,16 +61,53 @@ left:0px;
 <div id="cover"></div> 
 <div id="underConstruction"> 
     <div style="text-align: center; margin: 15">
-    	<p class="content3">還未指定新的工具
-    	<button id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('underConstruction');">關閉</button>    	
+    	<p class="content3">還未指定新的工具</p>
+    	<button class="content3" id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('underConstruction');">關閉</button>    	
 	</div>
 </div>
-<div id="coverShowCalculateScaleVolume"> 
-    <div class="content3" style="text-align: center;margin: 15">
 
+<div id="unitExchange"> 
+    <div style="text-align: center; margin:20px;">
+    	</br>
+    	<h3 class="content1">常用单位转换</h3>
+		</br>
+    	<table class="content3" style="text-align:center; margin:auto;vertical-align:center; border:0px solid red;">
+    		<tr>
+    			<th>单位转换类型</th>
+    			<th>初始值</th>
+    			<th>结果值</th>
+    		</tr>
+    		<tr>
+    			<td>
+    				<select id="unitExchangeType" class="content3">
+    					<option value="F2C">华氏度 - 摄氏度</option>
+    					<option value="C2F">摄氏度 - 华氏度</option>
+    					<option value="E2S">英寸 - 厘米</option>
+    					<option value="S2E">厘米 - 英寸</option>
+    				</select>
+    			</td>
+    			<td>
+    				<input id="ori" type="text" style="width:100px">
+    			</td>
+    			<td>
+    				<input id="res" type="text" style="width:100px">
+    			</td>
+    		</tr>
+		</table>
+		</br>
+		</hr>
+		<button class="content3" style="width:100px" id="btnExchangeUnit" onclick="ExhcnageUnit();">转换单位</button>
+		<button class="content3" style="width:100px" id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('unitExchange');">關閉</button>
+	</div>
+</div>
+
+
+<div id="coverShowCalculateScaleVolume"> 
+    <div class="content3" style="text-align:center;margin:20px;">
+    	</br>
     	<h3 class="content1">常見幅面藥水塗布用量</h3>
     	</br>
-		<table style="border:none;">
+		<table class="content3" style="border:0px solid red;cellspacing:0; cellpadding:5; margin:auto; text-align:center;vertical-align:center;">
 			<tr>
 				<td>單位:</td>
 				<td>
@@ -104,15 +141,10 @@ left:0px;
 					<input type=text id="vol">
 				</td>
 			</tr>
-			<tr>
-				<td style="text-align: center">
-					<button id="btnCalcu" class="content3" value="btnCalcu" onclick="CalculateVolume();">計算</button>
-				</td>
-				<td style="text-align: center">
-					<button id="btnCloseCoverageCalcuScaleVolume" class="content3" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">關閉</button>
-				</td>
-			</tr>
 		</table>
+		</br>
+		<button id="btnCalcu" class="content3" value="btnCalcu" style="width:100px;" onclick="CalculateVolume();">計算</button>
+		<button id="btnCloseCoverageCalcuScaleVolume" class="content3" style="width:100px;" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">關閉</button>
 	</div>
 </div>
 
@@ -144,7 +176,7 @@ left:0px;
     			
 				<input type="button" value="未指定" onclick="openNewPad('underConstruction');"/>
 				-->
-				<a onclick="openNewPad('underConstruction');">未指定</a>
+				<a onclick="openNewPad('unitExchange');">常用单位转换</a>
 			</td>
 			<!-- 
 			<td>
