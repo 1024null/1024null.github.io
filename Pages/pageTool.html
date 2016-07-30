@@ -4,57 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <style> 
-#cover{ 
-display:none; 
-position:fixed; 
-z-index:1; 
-top:0; 
-left:0; 
-width:100%; 
-height:100%; 
-background:rgba(0, 0, 0, 0.44); 
-} 
-#coverShowCalculateScaleVolume{ 
-display:none; 
-position:fixed; 
-z-index:2; 
-top:50%; 
-left:50%; 
-border:0px solid #000000; 
-width:500px; 
-height:280px; 
-margin-left:-150px; 
-margin-top:-150px; 
-background:#FFFFFF; 
-}
 
-#underConstruction{ 
-display:none; 
-position:fixed; 
-z-index:2; 
-top:50%; 
-left:50%; 
-border:0px solid #000000; 
-width:500px; 
-height:200px; 
-margin-left:-150px; 
-margin-top:-150px; 
-background:#FFFFFF; 
-}
-
-#coverShow{ 
-display:none; 
-position:fixed; 
-z-index:2; 
-top:50%; 
-left:50%; 
-border:0px solid #000000; 
-width:500px; 
-height:170px; 
-margin-left:-150px; 
-margin-top:-150px; 
-background:#FFFFFF; 
-} 
 
 #header, #footer{
 position:fixed;
@@ -85,6 +35,7 @@ left:0px;
 <title>工具集</title>
 
 <link rel="stylesheet" href="../stylesheets/fonts.css">
+<link rel="stylesheet" href="../stylesheets/tools.css">
 
 <body> 
 
@@ -110,18 +61,18 @@ left:0px;
 <div id="cover"></div> 
 <div id="underConstruction"> 
     <div style="text-align: center; margin: 15">
-    	<p class="content3">还未指定新的工具
-    	<button id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('underConstruction');">关闭</button>    	
+    	<p class="content3">還未指定新的工具
+    	<button id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('underConstruction');">關閉</button>    	
 	</div>
 </div>
 <div id="coverShowCalculateScaleVolume"> 
     <div class="content3" style="text-align: center;margin: 15">
 
-    	<h3 class="content1">常见幅面药水涂布用量</h3>
+    	<h3 class="content1">常見幅面藥水塗布用量</h3>
     	</br>
 		<table style="border:none;">
 			<tr>
-				<td>单位：</td>
+				<td>單位:</td>
 				<td>
 				<select id="unitSelector" class="content3">  
 				<option value ="cm">厘米</option>  
@@ -131,7 +82,7 @@ left:0px;
 			</tr>
 			<tr>
 				<td>
-					幅面长度:
+					幅面長度:
 				</td>
 				<td>
 					<input type=text id="len">
@@ -139,7 +90,7 @@ left:0px;
 			</tr>
 			<tr>
 				<td>
-					幅面宽度:
+					幅面寬度:
 				</td>
 				<td>
 					<input type=text id="wid">
@@ -147,7 +98,7 @@ left:0px;
 			</tr>
 			<tr>
 				<td>
-					幅面所需药水量(单位：ml):
+					幅面所需藥水量(單位:ml):
 				</td>
 				<td>
 					<input type=text id="vol">
@@ -155,10 +106,10 @@ left:0px;
 			</tr>
 			<tr>
 				<td style="text-align: center">
-					<button id="btnCalcu" class="content3" value="btnCalcu" onclick="CalculateVolume();">计算</button>
+					<button id="btnCalcu" class="content3" value="btnCalcu" onclick="CalculateVolume();">計算</button>
 				</td>
 				<td style="text-align: center">
-					<button id="btnCloseCoverageCalcuScaleVolume" class="content3" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">关闭</button>
+					<button id="btnCloseCoverageCalcuScaleVolume" class="content3" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">關閉</button>
 				</td>
 			</tr>
 		</table>
@@ -174,7 +125,7 @@ left:0px;
 				<input type="button" value="常见幅面药水涂布用量" onclick="calcuScaleVolume();"/>
 				<img title="常见幅面药水涂布用量" style="margin:auto; padding-right:400px; " width="300px" height="100px" src="../resources/tool1.jpg" onclick="calcuScaleVolume();" /> 
 				-->
-				<a onclick="calcuScaleVolume();">常见幅面药水涂布用量</a>
+				<a onclick="calcuScaleVolume();">常見幅面藥水塗布用量</a>
 
 			</td>
 			<!-- 
