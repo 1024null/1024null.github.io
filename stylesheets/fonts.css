@@ -8,22 +8,27 @@
   src: url('../resources/fonts/CHN-KXD.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Local FZ Song';
+  src: url('../resources/fonts/CHN-FZSongKBXKSRGB.otf') format('truetype');
+}
+
 #brand {
-	font-family:"Local Kangxi Dict";
+	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: bolder;
 }
 .anchor {
-	font-family:"Local Kangxi Dict";
+	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: bolder;
 	color:#000000;
 }
 .content3{
-	font-family:"Local Kangxi Dict";
+	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: light;
 	color:#000000;
 }
 .content1{
-	font-family:"Local Kangxi Dict";
+	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: bold;
 	color:#000000;
 }
