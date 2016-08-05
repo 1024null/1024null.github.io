@@ -68,6 +68,7 @@ left:0px;
 </div>
 
 <div id="unitExchange"> 
+    <!-- 
     <div style="text-align: center; margin:20px;">
     	</br>
     	<h3 class="content1">常用单位转换</h3>
@@ -95,6 +96,33 @@ left:0px;
     			</td>
     		</tr>
 		</table>
+		</br>
+		</hr>
+		<button class="content3" style="width:100px" id="btnExchangeUnit" onclick="ExhcnageUnit();">转换单位</button>
+		<button class="content3" style="width:100px" id="btnCloseCoverageCalcuScaleVolume" onclick="CloseCoverPage('unitExchange');">关闭</button>
+	</div> 
+	-->
+	<div style="text-align: center; margin:20px;">
+    	</br>
+    	<h3 class="content1">常用单位转换</h3>
+		</br>
+		<div class="content3">
+			单位转换类型 
+			<select id="unitExchangeType" class="content3">
+    			<option value="F2C">华氏度 - 摄氏度</option>
+    			<option value="C2F">摄氏度 - 华氏度</option>
+    			<option value="E2S">英寸 - 厘米</option>
+    			<option value="S2E">厘米 - 英寸</option>
+    		</select>
+		</div>
+		<div class="content3">
+			初始值
+			<input id="ori" type="text" style="width:100px">
+		</div>
+		<div class="content3">
+			结果值
+			<input id="res" type="text" style="width:100px">
+		</div>		
 		</br>
 		</hr>
 		<button class="content3" style="width:100px" id="btnExchangeUnit" onclick="ExhcnageUnit();">转换单位</button>

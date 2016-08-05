@@ -6,6 +6,13 @@ if (navigator.userAgent.toLowerCase().match(/iPhone/i) || navigator.userAgent.to
       metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
     }
   }
+
+  /*document.getElementById('unitExchange').style.width = document.getElementById('header').style.width;*/
+  document.getElementById('unitExchange').style.width = '375px';
+  document.getElementById('unitExchange').removeAttribute('top');
+  document.getElementById('unitExchange').removeAttribute('left'); 
+  document.getElementById('unitExchange').removeAttribute('margin-top');
+  document.getElementById('unitExchange').removeAttribute('margin-left');
   document.addEventListener("gesturestart", gestureStart, false);
 }
 function gestureStart() {
