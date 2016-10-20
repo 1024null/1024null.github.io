@@ -10,18 +10,28 @@
 <title>SEARCH</title>
 
 <link rel="stylesheet" href="../stylesheets/fonts.css">
-<link rel="stylesheet" href="../stylesheets/tools.css">
+<link rel="stylesheet" href="../stylesheets/style.css">
+
 
 <body> 
-
-<select id="cbxSearchcondtion">
-	<option value="SEARCH_ALL">SEARCH ALL</option>
-	<option value="SEARCH_PIC">SEARCH PICTURES</option>
-	<option value="SEARCH_MUSIC">SEARCH MUSICS</option>
-</select>
-
-<input type="text" id="txtKeywd" text="Input the search items you want to search...">
-<button id="btnSearch" onclick="SearchStart();">SEARCH</button>
+<div style="text-align:center; padding-top:30px">
+	<h2>NULL SEARCH</h2>
+	<table style="margin: auto; width: 60%; padding-top:30px; text-align:center;">
+	<tr>
+		<td style="width:100%">
+			<select id="cbxSearchcondtion">
+				<option value="SEARCH_ALL">SEARCH ALL</option>
+				<option value="SEARCH_PIC">SEARCH PICTURES</option>
+				<option value="SEARCH_MUSIC">SEARCH MUSICS</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td><input style="width:100%" type="text" id="txtKeywd" ></td>
+		<td><button id="btnSearch" onclick="SearchStart();">SEARCH</button></td>
+	</tr>
+	</table>
+</div>
 
 
 <script>
