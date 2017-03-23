@@ -1,0 +1,122 @@
+<html> 
+<head> 
+<html lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width">
+<style> 
+
+
+#header, #footer{
+position:fixed;
+height: 50px;
+display:block;
+width: 100%;
+background: #000000;
+z-index:9;
+margin:auto;
+text-align:center;
+vertical-align:center;
+align-content: center;
+}
+
+#header{
+top:0px;
+left:0px;
+}
+#footer{
+vertical-align: center;
+bottom:0px;
+left:0px;
+}
+
+</style> 
+
+</head> 
+<title>装框助手</title>
+
+<link rel="stylesheet" href="../stylesheets/fonts.css">
+<link rel="stylesheet" href="../stylesheets/tools.css">
+
+<body> 
+
+<div id="header">
+    <table style="border:none; text-align:center; top:0px; width:100%;height:60px;">
+          	<tr>
+          		<td style="text-align:left; width:50%; vertical-align:center;">
+          			<img style="width:150px; height:52px" src="../resources/UP-W.png" />
+          		</td>
+          		<td style="text-align:right; width:50%; vertical-align:center;">
+          			<img style="width:75px; height:25px" src="../resources/backToIndex.png"  onClick="location.href='./pageTool.html'"/>
+          			<!-- <a href="../index.html" id="backToMainPage">返回</a> -->
+          		</td>
+          	</tr>
+    </table>
+</div>
+<div id="footer"></br><a class="content3" style="color:#FFFFFF; font-weight:lighter;font-size:0.5em;">Hosted on Github Pages</a></div>
+
+
+<div style="margin-top: 80px;">
+<div style="border:solid 2px #000000;width:400px;height:200px;margin-left:50px">
+<p>画框参数</p>
+<table style="margin-left:20px;text-align: center;">
+	<tr>
+		<td>宽(mm)</td>
+		<td><input type=text id="frameWidth" value="0"/></td>
+	</tr>
+	<tr>
+		<td>高(mm)</td>
+		<td><input type=text id="frameHeight" value="0"/></td>
+	</tr>
+	<tr>
+		<td>边框宽(mm)</td>
+		<td><input type=text id="frameBorder" value="3"/></td>
+	</tr>
+</table>
+
+
+
+</div>
+
+<div id="divInner" style="border:solid 2px #C0D9D9;width:400px;height:200px;margin-left:500px;margin-top:-204px;">
+<p>画心参数</p>
+<table style="margin-left:20px;text-align: center;">
+	<tr>
+		<td>宽(mm)</td>
+		<td><input type=text id="innerWidth" value="0"/></td>
+	</tr>
+	<tr>
+		<td>高(mm)</td>
+		<td><input type=text id="innerHeight" value="0"/></td>
+	</tr>
+	<tr>
+		<td>上下边距(mm)</td>
+		<td><input type=text id="innerMarginVertical" value="0" disabled="true" /></td>
+	</tr>
+		<tr>
+		<td>左右边距(mm)</td>
+		<td><input type=text id="innerMarginHorizontal" value="0" disabled="true"/></td>
+	</tr>
+</table>
+</div>
+
+</div>
+
+<button style="margin-left:50px;margin-top:15px;width:90px;height:90px" onclick="changeStyle();">生成预览图</button>
+
+<div style="margin-top:50px;margin-left:50px;width:854px;height:854px">
+
+<div title="Outter" id="targetFrame" style="margin:auto;text-align: center;">
+	<div title="Inner" id="targetInner" style="background:#C0D9D9;margin:auto;text-align: center;"></div>
+</div>
+
+</div>   
+
+
+
+<script src="../javascripts/FramerJS.js"></script>
+<script src="../javascripts/scale.fix.js"></script>
+<script>toolMobileMode();</script>
+
+</body> 
+<html> 

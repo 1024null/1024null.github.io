@@ -23,7 +23,6 @@ function toolMobileMode(){
     toolDivMoibleMode('unitExchange');
     toolDivMoibleMode('coverShowCalculateScaleVolume');
     toolDivMoibleMode('underConstruction');
-
   }
 
 }
