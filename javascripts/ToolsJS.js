@@ -28,15 +28,30 @@ function CalculateVolume() {
 
     var square = len*wid;
     var totalVol;
+
+    var processType = document.getElementById('typeSelector').value;
+
     var condi = document.getElementById('unitSelector').value;
-    if(condi == "cm"){
+    if(processType == "standard"){
+        if(condi == "cm"){
         totalVol = square*0.0018;
+        }
+        else{
+        totalVol = square*0.012;
+        }
     }
     else{
-        totalVol = square*0.012;
+        if(condi == "cm"){
+        totalVol = square*0.014;
+        }
+        else{
+        totalVol = square*0.09;
+        }
     }
-    document.getElementById('vol').value = totalVol;
+    
+    document.getElementById('vol').value = totalVol; 
 }
+
 
 function ExhcnageUnit(){
     var ori = parseFloat(document.getElementById('ori').value);

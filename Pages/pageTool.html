@@ -136,8 +136,17 @@ left:0px;
     <div class="content3" style="text-align:center;margin:20px;">
 		</br>
     	<h3 class="content1">常见幅面药水涂布用量</h3>
-    	</br>
+    	
 		<table class="content3" style="border:0px solid red;cellspacing:0; cellpadding:5; margin:auto; text-align:center;vertical-align:center;">
+			<tr>
+				<td>类型:</td>
+				<td>
+				<select id="typeSelector" class="content3" onchange="ShowInstruct();">  
+				<option value ="standard">纸基涂布</option>  
+				<option value ="carbtrans">碳转移光敏化</option>  
+			    </select>  
+				</td>			
+			</tr>
 			<tr>
 				<td>单位:</td>
 				<td>
@@ -172,6 +181,7 @@ left:0px;
 				</td>
 			</tr>
 		</table>
+		<div id="instructForCarbontrans" class = "content3" style="display:none">碳转移光敏化时，重铬酸盐与稀释用醇的量均为以上计算值</div>
 		</br>
 		<button id="btnCalcu" class="content3" value="btnCalcu" style="width:100px;" onclick="CalculateVolume();">计算</button>
 		<button id="btnCloseCoverageCalcuScaleVolume" class="content3" style="width:100px;" onclick="CloseCoverPage('coverShowCalculateScaleVolume');">关闭</button>
@@ -230,6 +240,19 @@ left:0px;
 	</table>
 </div>
 
+<script>
+       function ShowInstruct(){
+           if(document.getElementById("typeSelector").value == "standard"){
+               document.getElementById("instructForCarbontrans").style.display="none";
+           }
+           else if(document.getElementById("typeSelector").value == "carbtrans"){
+               document.getElementById("instructForCarbontrans").style.display="block";
+           }
+           else{
+
+           }
+       }
+</script>
 
 <script src="../javascripts/ToolsJS.js"></script>
 <script src="../javascripts/scale.fix.js"></script>
