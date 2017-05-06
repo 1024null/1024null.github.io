@@ -27,8 +27,14 @@
 	font-weight: light;
 	color:#000000;
 }
+.content2{
+	font-family:"Adobe Sans Light","Bitstream Vera Sans Mono";
+	font-weight: light;
+	color:#000000;
+}
 .content1{
 	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: bold;
 	color:#000000;
 }
+
