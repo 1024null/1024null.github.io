@@ -1,0 +1,46 @@
+.navbar{
+	background-color: #000000;
+}
+
+.navbar-header{
+	height: 220px;
+}
+.navbar-brand{
+	/*background-image: url(https://dummyimage.com/220x220/000000/ffffff.png&text=HEADER);
+	background-size: cover;
+	background-repeat: no-repeat;*/
+	font-size: 36pt;
+	color: #ffffff;
+	margin-top: 74px;
+
+}
+
+.navbar-right{
+	color: #ffffff;
+	margin-top: 85px;
+}
+
+.sidebar .list-group-item{
+	border: 1px solid #eeeeee;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.sidebar .list-group-item.active{
+	border: 1px solid #eeeeee;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	background-color: #000000;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #000000;
+}
