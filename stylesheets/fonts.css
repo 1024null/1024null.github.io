@@ -13,6 +13,14 @@
   src: url('../resources/fonts/CHN-FZSongKBXKSRGB.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Hanyi Quantangshi Fan';
+  src: url('../resources/fonts/CHT-HYQTS.ttf') format('truetype');
+}
+
+CHT-HYQTS
+
+
 #brand {
 	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: bolder;
@@ -22,6 +30,13 @@
 	font-weight: bolder;
 	color:#000000;
 }
+
+.cht-hanyi{
+	font-family:"Hanyi Quantangshi Fan","Bitstream Vera Sans Mono";
+	font-weight: bold;
+	color:#000000;
+}
+
 .content3{
 	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: light;

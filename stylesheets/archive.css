@@ -44,3 +44,40 @@
   line-height: 60px; /* Vertically center the text there */
   background-color: #000000;
 }
+
+/* Umi-updated @ 20170509*/
+.arch-list img{
+	display:block;
+	border-radius: 5px;
+	max-width: 100%;
+
+}
+
+.arch-list-item{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.arch-list-item:first-child{
+	margin-top: 0px;
+}
+
+.arch-list-item .item-title{
+	color:#444444;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	line-height: 1.5;
+}
+
+.arch-list-item .item-title:hover{
+	color: #337ab7;
+}
+
+.arch-list-item .item-info{
+	color:#999999; 
+}
+
+a:hover {
+	text-decoration: none;
+}
