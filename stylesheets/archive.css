@@ -97,3 +97,9 @@ a:hover {
 	margin-top: 85px;
 	color:#ffffff;
 }
+
+.navitem span{
+	border-top: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+	border-radius: 5px;
+}
