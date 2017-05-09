@@ -49,3 +49,21 @@ function toolDivMoibleMode(divID){
 
 
 }
+
+/*Umi Added 20170510*/
+function archiveMobileMode(icoID,menuID){
+  if (navigator.userAgent.toLowerCase().match(/iPhone/i) || navigator.userAgent.toLowerCase().match(/android/i)) {
+    document.getElementById(icoID).style.display = "block";
+    document.getElementById(menuID).style.display = "none";
+
+  }
+}
+
+function menuSwitch(menuID){
+  if(document.getElementById(menuID).style.display=="block"){
+    document.getElementById(menuID).style.display="none"
+  }
+  else{
+    document.getElementById(menuID).style.display="block"
+  }
+}
