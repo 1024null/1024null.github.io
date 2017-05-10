@@ -29,7 +29,7 @@ function toolMobileMode(){
 
 function framerMobileMode(){
   if (navigator.userAgent.toLowerCase().match(/iPhone/i) || navigator.userAgent.toLowerCase().match(/android/i)) {
-    document.getElementById("divInner").style.cssText = "border:solid 2px #C0D9D9;width:400px;height:200px;margin-left:50px;margin-top:20px;";
+    
   }
 
 }
