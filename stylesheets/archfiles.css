@@ -2,24 +2,20 @@
 	background-color: #000000;
 }
 
-.navbar-header{
-	height: 220px;
-}
 .navbar-brand{
 	/*background-image: url(https://dummyimage.com/220x220/000000/ffffff.png&text=HEADER);
 	background-size: cover;
 	background-repeat: no-repeat;*/
-	font-size: 18pt;
+	font-size: 12pt;
 	color: #ffffff;
-	margin-top: 74px;
 
 }
 
 .navbar-right{
 	color: #ffffff;
-	margin-top: 85px;
+	/*UmiAdded 20170514*/
+	margin-top:15px;
 
-	/*UmiAdded 20170510*/
 	text-align: center;
 }
 
@@ -43,8 +39,8 @@
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  height: 30px;
+  line-height: 30px; /* Vertically center the text there */
   background-color: #000000;
 }
 
@@ -102,4 +98,17 @@ a:hover {
 	border-top: 3px solid #ffffff;
 	border-bottom: 3px solid #ffffff;
 	border-radius: 5px;
+}
+
+/* Umi added 20170514*/
+#backmenu span a{
+	color:#ffffff;
+	font-family: "Hanyi Quantangshi Fan","Bitstream Vera Sans Mono";
+}
+#backmenu span a:hover{
+	color:#337ab7;
+}
+.col-md-10{
+	font-size:10pt;
+	line-height: 20px;
 }
