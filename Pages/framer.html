@@ -7,100 +7,240 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap.css">   
     <link rel="stylesheet" type="text/css" href="../stylesheets/framer.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/fonts.css">
     <script src="../javascripts/jquery221.js"></script>
     <script src="../javascripts/tether.js"></script>
     <script src="../javascripts/bootstrap337.js"></script>
 </head>
-<body>
-	<div class="navbar nav-default">
-		<div class="container">
-			<div class="navbar-header">
-				<div class="navbar-brand">
-					
-				</div>
-				
-			</div>
-			<div class="navbar-right"><img style="width:75px; height:30px" src="../resources/backToIndex.png"  onClick="location.href='./pageTool.html'"/></div>
-		</div>
+<body style="background-color:#464646;color:#FFFFFF;" class="content4">
+	<div class="header">
+		<div class="logo" onClick="location.href='./pageTool.html'"></div>
+		</br>
+		<p></p>
+		<div  style="font-size:8pt">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;块</div>
+		<!-- <div class="navbar-right"><img style="width:75px; height:30px" src="../resources/backToIndex.png"  onClick="location.href='./pageTool.html'"/></div> -->
 	</div>
 
 	<div class="container" style="margin-bottom:100px;">
-		<div class="row">
-			<div class="col-md-4">
-				<div>
-					<form enctype="multipart/form-data" name="form1">
-						<div class="upload">上传图片</div>
-						<!-- <input id="f" type="file" name="f" class="btn btn-primary" onchange="change()" /> -->
-						<input id="f" type="file" name="f" class="file" onchange="loadpic();" />
-					</form>
-				</div>
-				</br>
-				<div class="btn-group">
-					<button class="btn" onclick="document.getElementById('frame').style['background-color'] = '#F7F7F4';">暖色卡纸</button>
-					<button class="btn" onclick="document.getElementById('frame').style['background-color'] = '#FFFFFF';">冷色卡纸</button>
-				</div>
-				<p></p>
-				<ul class="nav nav-tabs">
-					<li class="active" ><a href="#1" data-toggle="tab">Preview | 预览</a></li>
-					<li ><a href="#2" data-toggle="tab">Calibration Frame | 校准 边框</a></li>
-					<li ><a href="#3" data-toggle="tab">Calibration Free | 校准 自由</a></li>
-				</ul> 
-				<div class="tab-content">
-					<div class="tab-pane fade in active" id="1">
-					<div class="btn-group">
-						<button class="btn" id="la" onclick="layoutdisplay('S');">小</button>
-						<button class="btn" id="lb" onclick="layoutdisplay('M');">中</button>
-						<button class="btn" id="lc" onclick="layoutdisplay('L');">大</button>
-					</div>
-					</div>
-					<div class="tab-pane fade"id="2">
-					<div class="btn-group">
-						<button class="btn" id="400s" onclick="layoutdisplay('400S');">400x400</button>
-						<button class="btn" id="400300" onclick="layoutdisplay('400300');">400x300</button>
-						<button class="btn" id="400500" onclick="layoutdisplay('400500');">400x500</button>
-					</div>
-					</div>
-					<div class="tab-pane fade"id="3">
-					<div class="btn-group">
-						<button class="btn" id="free" onclick="layoutdisplay('FREE');">开始校准</button>
-					</div>
-					<p>带<span class="opt">*</span>符号为必须填写的项目</p>
-					</div>
-				</div>
-				<p></p>
-				
+		
+		<div class="col-md-3">
+			<!-- <div>
+				<form enctype="multipart/form-data" name="form1">
+					<div class="upload">上传图片</div>
+					<input id="f" type="file" name="f" class="btn btn-primary" onchange="change()" /> 
+					<input id="f" type="file" name="f" class="file" onchange="loadpic();" /> 
+				</form>
+			</div>-->
+			</br>
+			
+			
+			
 
-				<div class="result">
-					<p>Frame | 画框</p>
-					宽：<input type="text" id="fwid" /><span class="opt"> *</span></br>
-					高：<input type="text" id="fhet" /><span class="opt"> *</span>
+
+			<div>
+				<table>
+					<tr>
+						<td><button id="mode" class="btn">便捷</button></td>
+						<td><button id="upload" class="btn" data-toggle="modal" data-target="#uploaddialog" onclick="document.getElementById('result_table').style['display'] = 'none';">传图</button></td>
+						<td><button id="sizebase" class="btn" data-toggle="modal" data-target="#sizecooridantedialog">尺寸</button></td>
+					</tr>
+					<tr>
+						<td><button id="comfort" class="btn" data-toggle="modal" data-target="#mat">卡纸</button></td>
+						<td><button id="compact" class="btn" data-toggle="modal" data-target="#styledialog">布局</button></td>
+						<td><button id="btnpreview" class="btn" onclick="calcResult();">预览</button></td>
+					</tr>
+				</table>
+
+				<div id="uploaddialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="uploaddialogLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">上传图片 | UPLOADING</div>
+							<div class="modal-body"><input id="f" type="file" name="f" class="file" onchange="loadpic();" /></div>
+							<div class="modal-footer">
+								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+							</div>
+						</div>
+					</div>
 				</div>
-				<p></p>
-				<div class="result">
-					<p>Print | 画芯</p>
-					宽：<input type="text" id="iwid" /><span class="opt"> *</span></br>
-					高：<input type="text" id="ihet" />
+
+				<div id="sizecooridantedialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sizecooridantedialogLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">校准MODE及尺寸 | MODE and SIZE</div>
+							<div class="modal-body">
+								<table>
+									<tr>
+										<td><input type="radio" name="mode" value="frame" checked="checked">边框</div></td>
+										<td><input type="radio" name="mode" value="print">画面</div></td>
+									</tr>
+									<tr>
+										<td>宽(mm)</td>
+										<td><input type="text" id="wid" /></td>
+									</tr>
+									<tr>
+										<td>高(mm)</td>
+										<td><input type="text" id="het" /></td>
+									</tr>
+								</table>
+								
+							</div>
+							<div class="modal-footer">
+								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+							</div>
+						</div>
+					</div>
 				</div>
-				<p></p>
-				<div class="result">
-					<p>Window Mat | 卡纸开孔</p>
-					宽：<input type="text" id="mwid" /></br>
-					高：<input type="text" id="mhet" />
+
+				<div id="mat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="matLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">卡纸信息</div>
+							<div class="modal-body">
+								<div class="btn-group">
+									<button class="btn1" onclick="changematsstatus('W');">暖色</button>
+									<button class="btn1" onclick="changematsstatus('C');">冷色</button>
+									<button class="btn1" onclick="changematsstatus('N');">无卡纸</button>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+							</div>
+						</div>
+					</div>
 				</div>
-				<p></p>
+
+				<div id="styledialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="styledialogLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">布局选择 | Style Sheet</div>
+								<table>
+									<tr>
+										<td colspan="2">
+											<div class="btn-group">
+												<button class="btn" id="la" onclick="changeprintratio(0.25);document.getElementById('printratioinput').value=0.25;">小</button>
+												<button class="btn" id="lb" onclick="changeprintratio(0.5);document.getElementById('printratioinput').value=0.5;">中</button>
+												<button class="btn" id="lc" onclick="changeprintratio(0.75);document.getElementById('printratioinput').value=0.75;">大</button>
+											</div>	
+										</td>									
+									</tr>
+									<tr>
+										<td>其他</td>
+										<td><input type="text" id="printratioinput" value="0.5" /></td>
+									</tr>
+									<tr>
+										<td colspan="2"><button class="btn-primary" onclick="changeprintratio(document.getElementById('printratioinput').value);">确定</button></td>
+									</tr> 	
+								</table>
+							<div class="modal-footer">
+								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
 			</div>
-			<div class="col-md-8">
-				<p>预览:</p>
+
+	
+			</br>
+			<div>
+				<table id="result_table">
+					<tr>
+						<td colspan="2">画框尺寸</td>
+					</tr>
+					<tr>
+						<td>宽 :&nbsp;<span id="result_frame_width"></span></td>
+						<td>高 :&nbsp;<span id="result_frame_height"></span></td>
+					</tr>
+					<tr>
+						<td colspan="2">画心尺寸</td>
+					</tr>
+					<tr>
+						<td>宽 :&nbsp;<span id="result_print_width"></span></td>
+						<td>高 :&nbsp;<span id="result_print_height"></span></td>
+					</tr>
+					<tr>
+						<td colspan="2">卡纸开孔</td>
+					</tr>
+					<tr>
+						<td>宽 :&nbsp;<span id="result_mat_width"></span></td>
+						<td>高 :&nbsp;<span id="result_mat_height"></span></td>
+					</tr>
+				</table>
+			</div>
+
+			</br></br>
+
+
+			<!-- 
+			<p></p>
+			<ul class="nav nav-tabs">
+				<li class="active" ><a href="#1" data-toggle="tab">Preview | 预览</a></li>
+				<li ><a href="#2" data-toggle="tab">Calibration Frame | 校准 边框</a></li>
+				<li ><a href="#3" data-toggle="tab">Calibration Free | 校准 自由</a></li>
+			</ul> 
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="1">
+				<div class="btn-group">
+					<button class="btn" id="la" onclick="layoutdisplay('S');">小</button>
+					<button class="btn" id="lb" onclick="layoutdisplay('M');">中</button>
+					<button class="btn" id="lc" onclick="layoutdisplay('L');">大</button>
+					<button class="btn" id="lt" onclick="layoutdisplay('TEST');">TEST</button>
+				</div>
+				</div>
+				<div class="tab-pane fade"id="2">
+				<div class="btn-group">
+					<button class="btn" id="400s" onclick="layoutdisplay('400S');">400x400</button>
+					<button class="btn" id="400300" onclick="layoutdisplay('400300');">400x300</button>
+					<button class="btn" id="400500" onclick="layoutdisplay('400500');">400x500</button>
+				</div>
+				</div>
+				<div class="tab-pane fade"id="3">
+				<div class="btn-group">
+					<button class="btn" id="free" onclick="layoutdisplay('FREE');">开始校准</button>
+				</div>
+				<p>带<span class="opt">*</span>符号为必须填写的项目</p>
+				</div>
+			</div>
+			<p></p>
+			
+
+			<div class="result">
+				<p>Frame | 画框</p>
+				宽：<input type="text" id="fwid" /><span class="opt"> *</span></br>
+				高：<input type="text" id="fhet" /><span class="opt"> *</span>
+			</div>
+			<p></p>
+			<div class="result">
+				<p>Print | 画芯</p>
+				宽：<input type="text" id="iwid" /><span class="opt"> *</span></br>
+				高：<input type="text" id="ihet" />
+			</div>
+			<p></p>
+			<div class="result">
+				<p>Window Mat | 卡纸开孔</p>
+				宽：<input type="text" id="mwid" /></br>
+				高：<input type="text" id="mhet" />
+			</div>
+			<p></p>
+			-->
+		</div>
+		
+		<div class="col-md-9">
+			<p></p>
+			<div class="canv">
 				<div id="frame">
 					<div id="holder">
 						<img id="preview" alt="" name="pic" />
 					</div>
 				</div>
 			</div>
+			
 		</div>
+	
 	</div>
 	
-	<div class="footer"><span>无措实验室</span> | <span>Framer</span></div>
+	<!-- <div class="footer"><span>无措实验室</span> | <span>Framer</span></div> -->
 	<script src="../javascripts/scale.fix.js"></script>
 	<script src="../javascripts/FramerJS.js"></script>
 

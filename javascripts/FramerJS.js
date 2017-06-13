@@ -70,189 +70,347 @@ function changeStyle(){
 }
 
 var fwid = document.getElementById("fwid");
-        var fhet = document.getElementById("fhet");
+var fhet = document.getElementById("fhet");
 
-        var iwid = document.getElementById("iwid");
-        var iwid = document.getElementById("iwid");
+var iwid = document.getElementById("iwid");
+var iwid = document.getElementById("iwid");
 
-        var mwid = document.getElementById("mwid");
-        var mwid = document.getElementById("mwid");
-
-
-        
-        var frame = document.getElementById("frame");
-        var inner = document.getElementById("holder");
+var mwid = document.getElementById("mwid");
+var mwid = document.getElementById("mwid");
 
 
 
-        function loadpic(){
-            change();
+var frame = document.getElementById("frame");
+var inner = document.getElementById("holder");
+
+
+
+function loadpic(){
+    change();
+    document.getElementById("frame").style['display'] = "none";
+}
+
+function recalc1(){
+    if(fwid.value > iwid.value && fhet.value > ihet.value){
+        frame.style['width'] = (parseFloat(fwid.value)+10) + "px";
+        frame.style['height'] = (parseFloat(fhet.value)+10) + "px";
+        inner.style['width'] = (parseFloat(iwid.value) + 22) + "px";
+        frame.style['padding-left']= frame.style['padding-right'] = ((fwid.value-inner.offsetWidth)/2)+"px";
+        frame.style['padding-top']= frame.style['padding-bottom'] = ((fhet.value-inner.offsetHeight)/2)+"px";
+        if(inner.offsetHeight < frame.offsetHeight){
+            loaddata2(1);
+        }
+        else{
             document.getElementById("frame").style['display'] = "none";
+            alert("Target print is smaller in this set of frame | 所选画框尺寸过小");
         }
+        
+    }
+    else{
+        document.getElementById("frame").style['display'] = "none";
+        alert("Target print is smaller in this set of frame | 所选画框尺寸过小");
+    }
+    /*document.getElementById('frame').style['width'] = parseFloat(fwid.value)/(parseFloat(document.getElementById('iwid').value)/238) + 'px';
+    document.getElementById('frame').style['height'] = parseFloat(fhet.value)/(parseFloat(document.getElementById('iwid').value)/238) + 'px';
+    
+    document.getElementById('frame').style['padding-top'] = document.getElementById('frame').style['padding-bottom'] = (document.getElementById('frame').style['offsetHeight'] - document.getElementById('holder').style['offsetHeight'])/2 + "px"; 
+    document.getElementById('frame').style['padding-left'] = document.getElementById('frame').style['padding-right'] = (document.getElementById('frame').style['offsetWidth'] - document.getElementById('holder').style['offsetWidth'])/2 + "px";   */
+}
 
-        function recalc1(){
-            if(fwid.value > iwid.value && fhet.value > ihet.value){
-                frame.style['width'] = (parseFloat(fwid.value)+10) + "px";
-                frame.style['height'] = (parseFloat(fhet.value)+10) + "px";
-                inner.style['width'] = (parseFloat(iwid.value) + 22) + "px";
-                frame.style['padding-left']= frame.style['padding-right'] = ((fwid.value-inner.offsetWidth)/2)+"px";
-                frame.style['padding-top']= frame.style['padding-bottom'] = ((fhet.value-inner.offsetHeight)/2)+"px";
-                if(inner.offsetHeight < frame.offsetHeight){
-                    loaddata2(1);
-                }
-                else{
-                    document.getElementById("frame").style['display'] = "none";
-                    alert("Target print is smaller in this set of frame | 所选画框尺寸过小");
-                }
-                
-            }
-            else{
-                document.getElementById("frame").style['display'] = "none";
-                alert("Target print is smaller in this set of frame | 所选画框尺寸过小");
-            }
-            /*document.getElementById('frame').style['width'] = parseFloat(fwid.value)/(parseFloat(document.getElementById('iwid').value)/238) + 'px';
-            document.getElementById('frame').style['height'] = parseFloat(fhet.value)/(parseFloat(document.getElementById('iwid').value)/238) + 'px';
-            
-            document.getElementById('frame').style['padding-top'] = document.getElementById('frame').style['padding-bottom'] = (document.getElementById('frame').style['offsetHeight'] - document.getElementById('holder').style['offsetHeight'])/2 + "px"; 
-            document.getElementById('frame').style['padding-left'] = document.getElementById('frame').style['padding-right'] = (document.getElementById('frame').style['offsetWidth'] - document.getElementById('holder').style['offsetWidth'])/2 + "px";   */
-        }
+function recalc2(w,h){
+    if(document.getElementById('holder').offsetWidth < w && document.getElementById('holder').offsetHeight < h){
+        frame.style['width']= (w+10) + "px";
+        frame.style['height']= (h+10)+ "px";
+        frame.style['padding-left']= frame.style['padding-right'] = ((w-inner.offsetWidth)/2)+"px";
+        frame.style['padding-top']= frame.style['padding-bottom'] = ((h-inner.offsetHeight)/2)+"px";
+        loaddata1("F",1);
+    }
+    else{
+        document.getElementById("frame").style['display'] = "none";
+        alert("Target print is smaller in this set of frame | 所选画框尺寸过小");
+    }
+}
 
-        function recalc2(w,h){
-            if(document.getElementById('holder').offsetWidth < w && document.getElementById('holder').offsetHeight < h){
-                frame.style['width']= (w+10) + "px";
-                frame.style['height']= (h+10)+ "px";
-                frame.style['padding-left']= frame.style['padding-right'] = ((w-inner.offsetWidth)/2)+"px";
-                frame.style['padding-top']= frame.style['padding-bottom'] = ((h-inner.offsetHeight)/2)+"px";
-                loaddata1("F",1);
-            }
-            else{
-                document.getElementById("frame").style['display'] = "none";
-                alert("Target print is smaller in this set of frame | 所选画框尺寸过小");
-            }
-        }
 
-        function hundredized(num){
-            /*if(num%100<5){
-                return Math.floor(num/100)*100;
-            }
-            else if(num%100>=5){
-                return Math.ceil(num/100)*100;
-            }
-            else{
 
-            }*/
-            return Math.round(num/100)*100;
-        }
+function loaddata1(t,ratio){
+    if(t=="F"){
+        fwid.value = hundredized(document.getElementById("frame").offsetWidth*ratio);
+        fhet.value = hundredized(document.getElementById("frame").offsetHeight*ratio);
+    }
+    else if(t=="P"){
+        fwid.value = document.getElementById("frame").offsetWidth*ratio;
+        fhet.value = document.getElementById("frame").offsetHeight*ratio;
+    }
+    
+    iwid.value = 238*ratio;
+    ihet.value = (document.getElementById("holder").offsetHeight-22)*ratio;
+    mwid.value = parseFloat(iwid.value) + 20*ratio;
+    mhet.value = parseFloat(ihet.value) + 20*ratio;
 
-        function loaddata1(t,ratio){
-            if(t=="F"){
-                fwid.value = hundredized(document.getElementById("frame").offsetWidth*ratio);
-                fhet.value = hundredized(document.getElementById("frame").offsetHeight*ratio);
-            }
-            else if(t=="P"){
-                fwid.value = document.getElementById("frame").offsetWidth*ratio;
-                fhet.value = document.getElementById("frame").offsetHeight*ratio;
-            }
-            
-            iwid.value = 238*ratio;
-            ihet.value = (document.getElementById("holder").offsetHeight-22)*ratio;
-            mwid.value = parseFloat(iwid.value) + 20*ratio;
-            mhet.value = parseFloat(ihet.value) + 20*ratio;
+}
 
-        }
+function loaddata2(ratio){
 
-        function loaddata2(ratio){
+    fwid.value = hundredized(document.getElementById("frame").offsetWidth*ratio);
+    fhet.value = hundredized(document.getElementById("frame").offsetHeight*ratio);
+    
+    iwid.value = (document.getElementById("holder").offsetWidth -22 )*ratio;
+    ihet.value = (document.getElementById("holder").offsetHeight -22)*ratio;
+    mwid.value = parseFloat(iwid.value) + 20*ratio;
+    mhet.value = parseFloat(ihet.value) + 20*ratio;
 
-            fwid.value = hundredized(document.getElementById("frame").offsetWidth*ratio);
-            fhet.value = hundredized(document.getElementById("frame").offsetHeight*ratio);
-            
-            iwid.value = (document.getElementById("holder").offsetWidth -22 )*ratio;
-            ihet.value = (document.getElementById("holder").offsetHeight -22)*ratio;
-            mwid.value = parseFloat(iwid.value) + 20*ratio;
-            mhet.value = parseFloat(ihet.value) + 20*ratio;
+}
 
-        }
+function layoutdisplay(layouttype){
+    
+    frame.style['display'] = "block";
+    if(layouttype=="S"){
+        frame.style['width']= "330px";
+        frame.style['height'] = (inner.offsetHeight+60+10) + "px";
+        frame.style['padding']= "30px";
+        loaddata1("P",1);
+        
+    }
+    else if(layouttype=="M"){
+        frame.style['width']= "390px";
+        frame.style['height'] = (inner.offsetHeight+120+10) + "px";
+        frame.style['padding']= "60px";
+        loaddata1("P",1);
+    }
+    else if(layouttype=="L"){
+        frame.style['width']= "510px";
+        frame.style['height'] = (inner.offsetHeight+240+10) + "px";
+        frame.style['padding']= "120px";
+        loaddata1("P",1);
+    }
+    else if(layouttype=="TEST"){
+        frame.style['width']= "260px";
+        frame.style['height'] = (inner.offsetHeight+30+10) + "px";
+        frame.style['padding']= "15px";
+        loaddata1("P",1);
+    }
+    else if(layouttype=="400S"){
+        recalc2(400,400);
+        
+    }
+    else if(layouttype=="400300"){
+        recalc2(400,300);
+    }
+    else if(layouttype=="400500"){
+        
+        recalc2(400,500);
+    }
+    else if(layouttype=="FREE"){
+        recalc1();
+    }
+    else{
 
-        function layoutdisplay(layouttype){
-            
-            frame.style['display'] = "block";
-            if(layouttype=="S"){
-                frame.style['width']= "330px";
-                frame.style['height'] = (inner.offsetHeight+60+10) + "px";
-                frame.style['padding']= "30px";
-                loaddata1("P",1);
-                
-            }
-            else if(layouttype=="M"){
-                frame.style['width']= "390px";
-                frame.style['height'] = (inner.offsetHeight+120+10) + "px";
-                frame.style['padding']= "60px";
-                loaddata1("P",1);
-            }
-            else if(layouttype=="L"){
-                frame.style['width']= "510px";
-                frame.style['height'] = (inner.offsetHeight+240+10) + "px";
-                frame.style['padding']= "120px";
-                loaddata1("P",1);
-            }
-            else if(layouttype=="400S"){
-                recalc2(400,400);
-                
-            }
-            else if(layouttype=="400300"){
-                recalc2(400,300);
-            }
-            else if(layouttype=="400500"){
-                
-                recalc2(400,500);
-            }
-            else if(layouttype=="FREE"){
-                recalc1();
-            }
-            else{
+    }
+    
+}
 
-            }
-            
-        }
+function change() {
+    var pic = document.getElementById("preview"),
+    file = document.getElementById("f");
 
-        function change() {
-        var pic = document.getElementById("preview"),
-        file = document.getElementById("f");
+    var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
 
-        var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
-
-        // gif在IE浏览器暂时无法显示
-        if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
+    // gif在IE浏览器暂时无法显示
+    if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
         alert("图片的格式必须为png或者jpg或者jpeg格式！"); 
         return;
-        }
-        var isIE = navigator.userAgent.match(/MSIE/)!= null,
-        isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
+    }
+    var isIE = navigator.userAgent.match(/MSIE/)!= null,
+    isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
 
-        if(isIE) {
+    if(isIE) {
         file.select();
         var reallocalpath = document.selection.createRange().text;
 
         // IE6浏览器设置img的src为本地路径可以直接显示图片
         if (isIE6) {
-        pic.src = reallocalpath;
-        }else {
-        // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现
-        pic.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + reallocalpath + "\")";
-        // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
-        pic.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+            pic.src = reallocalpath;
         }
-        }else {
+        else {
+            // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现
+            pic.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + reallocalpath + "\")";
+            // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
+            pic.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+        }
+    }
+    else {
         html5Reader(file);
-        }
-        }
+    }
 
-        function html5Reader(file){
-        var file = file.files[0];
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function(e){
+}
+
+function html5Reader(file){
+    var file = file.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e){
         var pic = document.getElementById("preview");
         pic.src=this.result;
+    }
+}
+
+
+function hundredized(num){
+    if(num>450 && num<465){
+        return 450
+    }
+    else if(num >=465){
+        return Math.round(num/100)*100;
+    }
+    num = Math.floor(num/10)*10;
+    if(num%100<50){
+        return (Math.round(num/100)+0.5)*100;
+    }
+    else if(num%100>50){
+        return Math.round(num/100)*100;
+    }
+    else{
+        return num;
+    }
+    //return Math.round(num/100)*100;
+}
+
+//Umi added 20170611
+function getradiobuttonselection(name){
+    var radios = document.getElementsByName(name);
+    for (var i = 0; i < radios.length; i++) {
+        if(radios[i].checked){
+            return radios[i].value;
         }
-        }
+    }
+
+}
+
+var dispratio = 0.65; //screen display percentage 
+var printratio = 0.25; //print possessed in frame
+
+var matceiling = 10;
+var frameborder = 5;
+
+var wid = document.getElementById("wid");
+var het = document.getElementById("het");
+
+
+function changeprintratio(ratio){
+    
+    if(parseFloat(ratio) >0.99 || parseFloat(ratio)<0.01){
+        alert("画面所占比例应小于1");
+
+    }
+    else{
+        printratio = parseFloat(ratio);
+    }
+}
+
+
+
+function calcResult(){
+    frame.style["display"] = "block";
+    
+    
+    if(getradiobuttonselection("mode") == "frame"){
+        
+        dispratio = (260+2*frameborder)/parseFloat(wid.value);
+        frame.style["border"] = frameborder*dispratio + "px solid #000000";
+        frame.style["width"]= (260+2*frameborder*dispratio) + "px";
+        inner.style["width"] = Math.sqrt(printratio)*(260+2*frameborder*dispratio) + "px";
+        //alert(inner.style["width"]);
+        var fRealHet = hundredized(inner.offsetHeight/(Math.sqrt(printratio)*dispratio));
+        //alert(fRealHet);
+        //alert(inner.offsetHeight/(Math.sqrt(printratio)*dispratio));
+        //var fRealHet = inner.offsetHeight/(Math.sqrt(printratio)*dispratio);
+        frame.style["height"] = (fRealHet * dispratio) + "px";
+        
+        
+        frame.style['padding-left'] = frame.style['padding-right'] = ((frame.offsetWidth -2*frameborder*dispratio -inner.offsetWidth)/2)+"px";
+        frame.style['padding-top'] = frame.style['padding-bottom'] = ((frame.offsetHeight -2*frameborder*dispratio -inner.offsetHeight)/2)+"px";
+
+        inner.style['padding'] = matceiling*dispratio + "px";
+
+        //frame.style["height"] = (inner.offsetHeight*inner.offsetWidth)/(260*Math.sqrt(printratio)) + "px";
+
+        //alert(frame.style["width"] + "1 " + frame.style["height"] + " 2" + inner.style["width"]  + "3" + inner.style["height"]);
+
+        //alert(wid.value +" " + fRealHet +" "+inner.offsetWidth/dispratio+" " + inner.offsetHeight/dispratio+" ");
+        document.getElementById("result_table").style['display'] = "block";
+        loadresult(wid.value,fRealHet,inner.offsetWidth/dispratio,inner.offsetHeight/dispratio);
+
+
+    }
+    else if(getradiobuttonselection("mode") == "print"){
+
+        dispratio = 260/(hundredized(parseFloat(wid.value)/Math.sqrt(printratio))-2*frameborder);
+
+        frame.style["border"] = frameborder*dispratio + "px solid #000000";
+        frame.style["width"]= (260+2*frameborder*dispratio) + "px";
+        inner.style["width"] = Math.sqrt(printratio)*(260+2*frameborder*dispratio) + "px";
+        //alert(inner.style["width"]);
+        var fRealHet = hundredized(inner.offsetHeight/(Math.sqrt(printratio)*dispratio));
+        //alert(fRealHet);
+        //alert(inner.offsetHeight/(Math.sqrt(printratio)*dispratio));
+        //var fRealHet = inner.offsetHeight/(Math.sqrt(printratio)*dispratio);
+        frame.style["height"] = (fRealHet * dispratio) + "px";
+        
+        
+        frame.style['padding-left'] = frame.style['padding-right'] = ((frame.offsetWidth -2*frameborder*dispratio -inner.offsetWidth)/2)+"px";
+        frame.style['padding-top'] = frame.style['padding-bottom'] = ((frame.offsetHeight -2*frameborder*dispratio -inner.offsetHeight)/2)+"px";
+
+        inner.style['padding'] = matceiling*dispratio + "px";
+
+        //frame.style["height"] = (inner.offsetHeight*inner.offsetWidth)/(260*Math.sqrt(printratio)) + "px";
+
+        //alert(frame.style["width"] + "1 " + frame.style["height"] + " 2" + inner.style["width"]  + "3" + inner.style["height"]);
+
+        //alert(hundredized(parseFloat(wid.value)/Math.sqrt(printratio)) +" " + fRealHet +" "+wid.value+" " + inner.offsetHeight/dispratio+" ");
+        document.getElementById("result_table").style['display'] = "block";
+        loadresult(hundredized(parseFloat(wid.value)/Math.sqrt(printratio)),fRealHet,wid.value,inner.offsetHeight/dispratio);
+    }
+    else{
+
+    }
+
+    
+}
+
+function changematsstatus(sta){
+    if(sta == "C"){
+        document.getElementById('frame').style['background-color'] = '#FFFFFF';
+        document.getElementById('holder').style['border'] = '1px solid #000000';
+        document.getElementById('holder').style['background-color'] = '#FFFFFF';
+    }
+    else if(sta == "W"){
+        document.getElementById('frame').style['background-color'] = '#F7F7F4';
+        document.getElementById('holder').style['border'] = '1px solid #000000';
+        document.getElementById('holder').style['background-color'] = '#FFFFFF';
+    }
+    else if(sta == "N"){
+        document.getElementById('holder').style['border'] = '1px solid #FFFFFF';
+        document.getElementById('holder').style['background-color'] = '#FFFFFF';
+        document.getElementById('frame').style['background-color'] = '#FFFFFF';
+    }
+    else{
+
+    }
+}
+
+function loadresult(fw,fh,mw,mh){
+    var _fw = document.getElementById("result_frame_width");
+    var _fh = document.getElementById("result_frame_height");
+    var _pw = document.getElementById("result_print_width");
+    var _ph = document.getElementById("result_print_height");
+    var _mw = document.getElementById("result_mat_width");
+    var _mh = document.getElementById("result_mat_height");
+
+    _fw.innerHTML = fw;
+    _fh.innerHTML = fh;
+    _pw.innerHTML = parseFloat(mw).toFixed(2)-20;
+    _ph.innerHTML = parseFloat(mh).toFixed(2)-20;
+    _mw.innerHTML = parseFloat(mw).toFixed(2);
+    _mh.innerHTML = parseFloat(mh).toFixed(2);
+}

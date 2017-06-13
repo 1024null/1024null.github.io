@@ -1,120 +1,37 @@
-.navbar{
-	background-color: #000000;
+.header{
+	text-align: center;
+	margin: auto;
+	height: 82px;
+	display:block;
+	width: 100%;
+	background: #464646;
+	margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;
 }
-
-.navbar-header{
-}
-.navbar-brand{
-	background-image: url(../resources/UP-W.png);
+.logo{
+	background-image: url(../resources/UP320-W.png);
 	background-size: cover;
 	background-repeat: no-repeat;
-	width:150px;
+	width:320px;
+	height: 31px;
 	font-size: 18pt;
 	color: #ffffff;
+	
+	margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;
+	margin-top: 18px;
 
 }
 
-.navbar-right{
-	color: #ffffff;
-	/*UmiAdded 20170511*/
-	text-align: right;
-	margin-top: 10px;
-}
-
-.sidebar .list-group-item{
-	border: 1px solid #eeeeee;
-	border-radius: 5px;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-.sidebar .list-group-item.active{
-	border: 1px solid #eeeeee;
-	border-radius: 5px;
-	margin-bottom: 10px;
-	text-align: center;
-	background-color: #000000;
-}
-
-.footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	/* Set the fixed height of the footer here */
-	height: 60px;
-	line-height: 60px; /* Vertically center the text there */
-	background-color: #000000;
-	color: #ffffff;
-	text-align: center;
-
-}
-
-/* Umi-updated @ 20170509*/
-.arch-list img{
-	display:block;
-	border-radius: 5px;
-	max-width: 100%;
-
-}
-
-.arch-list-item{
-	display: block;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #888888;
-}
-.arch-list-item:first-child{
-	padding-top: 0;
-}
-
-.arch-list-item .item-title{
-	color:#444444;
-	display: block;
-	font-size: 18px;
-	font-weight: bold;
-	margin-bottom: 5px;
-	line-height: 1.5;
-}
-
-.arch-list-item .item-title:hover{
-	color: #337ab7;
-}
-
-.arch-list-item .item-info{
-	color:#999999; 
-}
 
 a:hover {
 	text-decoration: none;
 }
 
-
-/*Umi Added 20170510*/
-#ico{
-	display: none;
-	text-align: center;
-}
-.navitem{
-	margin-top: 85px;
-	color:#ffffff;
-}
-
-.navitem span{
-	border-top: 3px solid #ffffff;
-	border-bottom: 3px solid #ffffff;
-	border-radius: 5px;
-}
-
-/*Umi Added 20170511*/
-.list-group-item{
-	border:0;
-}
-
-body{
-	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
-	font-weight: light;
-	color:#000000;
-}
 
 /*Umi added 20170606*/
 
@@ -127,7 +44,13 @@ img{
 #holder{
 	display: inline-block;
 	vertical-align: middle;
-	width: 260px;
+	
+	/*margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;*/
+
+	
 	border:1px solid #000000;
 	padding: 10px;
 	background-color: #FFFFFF;
@@ -135,10 +58,17 @@ img{
 
 #frame{
 	border:5px solid #000000;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	/*padding-top: 30px;
+	padding-bottom: 30px;*/
 	display: none;
 	background-color: #F7F7F4;
+
+	margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;
+
+
 }
 
 #f{
@@ -155,7 +85,75 @@ img{
 }
 .btn{
 	margin:2px;
+	background-color:#4A4A4A;
+	border-radius: 65px;
+	height: 65px;
+	width: 65px;
+	border: 1px solid #FFFFFF;
+}
+.btn:hover{
+	background-color:#FFFFFF;
 }
 .opt{
 	color: #FF0000;
+}
+
+table{
+	margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;
+}
+
+td{
+	padding:10px;
+}
+.modal{
+	color: #4A4A4A;
+
+}
+input{
+	color: #000000;
+}
+
+.col-md-9{
+	padding-right: 30px;
+}
+
+.canv{
+	margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;
+}
+.btn1{
+	border-radius: 5px;
+	border: 0;
+}
+.btn-primary{
+	border: 0;
+}
+
+#styledialog .btn{
+	height: 30px;
+	border-radius: 5px;
+	background-color: #EEEEEE;
+}
+#styledialog .btn:hover{
+	background-color: #FFFFFF;
+}
+
+#result_table{
+	margin:auto;
+	text-align:center;
+	vertical-align:center;
+	align-content: center;
+	display: none;
+}
+
+
+#result_table td{
+	width: 160px;
+	text-align: center;
+	padding:10px;
 }
