@@ -340,7 +340,8 @@ function  otw(){
     
 
     var offsetx = 175-w*0.085/2;
-    var offsety = 92.5-h*0.085/2;
+    //var offsety = 92.5-h*0.085/2;
+    var offsety = 112.5-h*0.085/2;
     drawframepreview("cvsotw",offsetx,offsety,0.085,false);
 
     ctxowt.drawImage(imageotw,5,5);
