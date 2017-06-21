@@ -132,7 +132,7 @@ function hundredized(num){
     else if(num >=465){
         return Math.round(num/100)*100;
     }
-    else if(num < 300){
+    else if(num <= 300){
         return 300;
     }
     else{
