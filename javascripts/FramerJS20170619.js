@@ -228,20 +228,22 @@ function calculateprintandframesize(){
         var longside = parseFloat(document.getElementById("longside").value);
         if(getradiobuttonselection("mode") == "frame"){
             if(scale<1){//portrait picture
-                h = longside;
+                h = hundredized(longside);
                 ph = longside - 2*mv-20 - 2*b;
                 pw = ph*scale;
                 w = pw+2*mh+20 + 2*b;
                 w = hundredized(w);
                 mh = (w-pw-20-2*b)/2;
+                mv = (h-ph-20-2*b)/2;
             }
             else if(scale>1){//landscape picture
-                w = longside;
+                w = hundredized(longside);
                 pw = longside - 2*mh-20 -2*b;
                 ph = pw/scale;
                 h = ph + 2*mv+20 +2*b;
                 h = hundredized(h);
                 mv = (h-ph-20-2*b)/2;
+                mh = (w-pw-20-2*b)/2;
             }
             else if(scale==1){//square picture
                 w = h = hundredized(longside);
