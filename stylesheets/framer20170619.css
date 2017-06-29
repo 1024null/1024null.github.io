@@ -87,10 +87,10 @@ img{
 .btnc{
 	margin:2px;
 	background-color:#565656;
-	border-radius: 65px;
-	height: 65px;
-	width: 65px;
-	border: 1px solid #FFFFFF;
+	border-radius: 30px;
+	height: 30px;
+	width: 30px;
+	
 }
 .btnc:hover{
 	background-color:#FFFFFF;
@@ -115,10 +115,6 @@ td{
 }
 input{
 	color: #000000;
-}
-
-.col-md-9{
-	padding-right: 30px;
 }
 
 .canv{
@@ -171,7 +167,6 @@ input{
 	text-align:center;
 	vertical-align:center;
 	align-content: center;
-	margin-top: 35px;
 }
 
 #cvsotw{
@@ -181,5 +176,54 @@ input{
 	text-align:center;
 	vertical-align:center;
 	align-content: center;
-	margin-top: 40px;
+}
+
+/* Umi Added 20170629*/
+.filled{
+	margin:2.5px;
+	height: 300px;
+
+}
+
+.col-md-3{
+	padding:2.5px;
+
+}
+
+.col-md-6{
+	padding: 2.5px;	
+}
+
+#_btng1{
+	margin-top:10px;
+}
+
+#mode{
+	background-color: #d7e7e5;
+	border: 1px solid #d7e7e5;
+}
+
+#upload{
+	background-color: #cfdedd;
+	border: 1px solid #cfdedd;
+}
+
+#sizebase{
+	background-color: #cfdedc;
+	border: 1px solid #cfdedc;
+}
+
+#matbase{
+	background-color: #cddddb;
+	border: 1px solid #cddddb;
+}
+
+#framebase{
+	background-color: #ccdbda;
+	border: 1px solid #ccdbda;
+}
+
+#btnpreview{
+	background-color: #c8d7d6;
+	border: 1px solid #c8d7d6;
 }

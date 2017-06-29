@@ -12,7 +12,7 @@
     <script src="../javascripts/tether.js"></script>
     <script src="../javascripts/bootstrap337.js"></script>
 </head>
-<body style="background-color:#565656;color:#FFFFFF;" class="content4">
+<body style="background-color:#FFFFFF;color:#000000;" class="content4">
 	<div class="header">
 		<div class="logo" onClick="location.href='./pageTool.html'"></div>
 		</br>
@@ -22,197 +22,194 @@
 	</div>
 
 	<div class="container" style="margin-bottom:100px;">
-		
 		<div class="col-md-3">
-			</br>
-			<div>
-				<table>
-					<tr>
-						<td><button id="mode" class="btnc">便捷</button></td>
-						<td><button id="upload" class="btnc" data-toggle="modal" data-target="#uploaddialog" onclick="resetworkingarea();">传图</button></td>
-						<td><button id="sizebase" class="btnc" data-toggle="modal" data-target="#sizecooridantedialog" onclick="resetworkingarea();">尺寸</button></td>
-					</tr>
-					<tr>
-						<td><button id="comfort" class="btnc" data-toggle="modal" data-target="#mat" onclick="resetworkingarea();">卡纸</button></td>
-						<td><button id="compact" class="btnc" data-toggle="modal" data-target="#framedialog" onclick="resetworkingarea();">边框</button></td>
-						<td><button id="btnpreview" class="btnc" data-toggle="modal" data-target="#previewdialog">预览</button></td>
-					</tr>
-				</table>
+			<div id="_btng1" class="filled" style="background-color:#bdefed;">
+					</br>
+					<table>
+						<tr>
+							<td><button id="mode" class="btnc"></button></td>
+							<td><button id="upload" class="btnc" data-toggle="modal" data-target="#uploaddialog" onclick="resetworkingarea();"></button></td>
+							<td><button id="sizebase" class="btnc" data-toggle="modal" data-target="#sizecooridantedialog" onclick="resetworkingarea();"></button></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><button id="matbase" class="btnc" data-toggle="modal" data-target="#mat" onclick="resetworkingarea();"></button></td>
+							<td><button id="framebase" class="btnc" data-toggle="modal" data-target="#framedialog" onclick="resetworkingarea();"></button></td>
+							<td><button id="btnpreview" class="btnc" data-toggle="modal" data-target="#previewdialog"></button></td>
+						</tr>
+					</table>
 
-				<div id="uploaddialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="uploaddialogLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">上传图片 | UPLOADING</div>
-							<div class="modal-body"><input id="f" type="file" name="f" class="file" onchange="change();" /></div>
-							<div class="modal-footer">
-								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+					<div id="uploaddialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="uploaddialogLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">上传图片 | UPLOADING</div>
+								<div class="modal-body"><input id="f" type="file" name="f" class="file" onchange="change();" /></div>
+								<div class="modal-footer">
+									<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div id="sizecooridantedialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sizecooridantedialogLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">校准MODE及尺寸 | MODE and SIZE</div>
-							<div class="modal-body">
+					<div id="sizecooridantedialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sizecooridantedialogLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">校准MODE及尺寸 | MODE and SIZE</div>
+								<div class="modal-body">
+									<table>
+										<tr>
+											<td><input type="radio" name="mode" value="frame" checked="checked">边框</td>
+											<td><input type="radio" name="mode" value="print">画面</div></td>
+										</tr>
+										<tr>
+											<td>长边(mm)</td>
+											<td><input type="text" id="longside" value="300"></td>
+										</tr>
+										<tr>
+											<td colspan="2"><button class="btn-primary" id="calcsize" onclick="calculateprintandframesize();">Calculate Size</button></td>
+										</tr>
+
+									</table>
+								</div>
+								<div class="modal-footer">
+									<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="mat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="matLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">卡纸信息 | Mat Information</div>
+								<div class="modal-body">
 								<table>
 									<tr>
-										<td><input type="radio" name="mode" value="frame" checked="checked">边框</td>
-										<td><input type="radio" name="mode" value="print">画面</div></td>
-									</tr>
-									<tr>
-										<td>长边(mm)</td>
-										<td><input type="text" id="longside" value="300"></td>
-									</tr>
-									<tr>
-										<td colspan="2"><button class="btn-primary" id="calcsize" onclick="calculateprintandframesize();">Calculate Size</button></td>
-									</tr>
-
-								</table>
-								
-							</div>
-							<div class="modal-footer">
-								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="mat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="matLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">卡纸信息 | Mat Information</div>
-							<div class="modal-body">
-							<table>
-								<tr>
-									<td>
-										<div class="btn-group">
-											<button class="btn" onclick="changematsstatus('W');">暖色</button>
-											<button class="btn" onclick="changematsstatus('C');">冷色</button>
-											<button class="btn" onclick="changematsstatus('N');">无卡纸</button>
-										</div>
-									</td>
-									<td>
-										<div id="matcolorpreview" style="background-color:#F7F7F4;width:20px;height:20px;border-radius:5px;border:1px solid #9999EE;"></div>
-									</td>
-								</tr>
-							</table>
-								
-							</div>
-							<div class="modal-footer">
-								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="framedialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="framedialogLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">边框选择 | Frame Style</div>
-								<table>
-									<tr>
-										<td>边框颜色</td>
 										<td>
 											<div class="btn-group">
-												<button class="btn" onclick="framebordercolorchange('B');">Black</button>
-												<button class="btn" onclick="framebordercolorchange('W');">White</button>
+												<button class="btn" onclick="changematsstatus('W');">暖色</button>
+												<button class="btn" onclick="changematsstatus('C');">冷色</button>
+												<button class="btn" onclick="changematsstatus('N');">无卡纸</button>
 											</div>
 										</td>
 										<td>
-											<div id="colorpreview" style="background-color:#000000;width:20px;height:20px;border-radius:5px;border:1px solid #9999EE;"></div>
-										</td>
-									</tr>
-									<tr>
-										<td>Frame Border Width</td>
-										<td>
-											<input type="text" id="borderwidth" value="5" />
-										</td>
-										<td>(mm)</td>
-									</tr>
-								</table>
-							<div class="modal-footer">
-								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="previewdialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="previewdialogLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">预览 | Preview</div>
-							<div class="modal-body">
-								<table>
-									<tr>
-										<td><span style="font-size:4pt;">需要的画心尺寸</span></td>
-										<td>
-											<div class="btn-group">
-												<button class="btn" onclick="drawonratio('S');">S</button>
-												<button class="btn" onclick="drawonratio('M');">M</button>
-												<button class="btn" onclick="drawonratio('L');">L</button>
-												<button class="btn" onclick="drawonratio('XL');">XL</button>
-											</div>
+											<div id="matcolorpreview" style="background-color:#F7F7F4;width:20px;height:20px;border-radius:5px;border:1px solid #9999EE;"></div>
 										</td>
 									</tr>
 								</table>
-								
-							</div>
-							<div class="modal-footer">
-								<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+									
+								</div>
+								<div class="modal-footer">
+									<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+								</div>
 							</div>
 						</div>
 					</div>
+
+					<div id="framedialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="framedialogLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">边框选择 | Frame Style</div>
+									<table>
+										<tr>
+											<td>边框颜色</td>
+											<td>
+												<div class="btn-group">
+													<button class="btn" onclick="framebordercolorchange('B');">Black</button>
+													<button class="btn" onclick="framebordercolorchange('W');">White</button>
+												</div>
+											</td>
+											<td>
+												<div id="colorpreview" style="background-color:#000000;width:20px;height:20px;border-radius:5px;border:1px solid #9999EE;"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>Frame Border Width</td>
+											<td>
+												<input type="text" id="borderwidth" value="5" />
+											</td>
+											<td>(mm)</td>
+										</tr>
+									</table>
+								<div class="modal-footer">
+									<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="previewdialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="previewdialogLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">预览 | Preview</div>
+								<div class="modal-body">
+									<table>
+										<tr>
+											<td><span style="font-size:4pt;">需要的画心尺寸</span></td>
+											<td>
+												<div class="btn-group">
+													<button class="btn" onclick="drawonratio('S');">S</button>
+													<button class="btn" onclick="drawonratio('M');">M</button>
+													<button class="btn" onclick="drawonratio('L');">L</button>
+													<button class="btn" onclick="drawonratio('XL');">XL</button>
+												</div>
+											</td>
+										</tr>
+									</table>
+									
+								</div>
+								<div class="modal-footer">
+									<button class="btn-primary" style="border-radius:5px;" data-dismiss="modal">关闭 | CLOSE</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</br>
+				<div>
+					<table id="result_table">
+						<tr>
+							<td>边框:</td>
+							<td><span id="result_frame"></span>mm</td>
+						</tr>
+						<tr>
+							<td>画心:</td>
+							<td><span id="result_print"></span>mm</td>
+						</tr>
+						<tr>
+							<td>卡纸:</td>
+							<td><span id="result_mat"></span>mm</td>
+						</tr>
+					</table>
 				</div>
 
-				
+				</br></br>
 			</div>
-
-	
-			</br>
-			<div>
-				<table id="result_table">
-					<tr>
-						<td>边框:</td>
-						<td><span id="result_frame"></span>mm</td>
-					</tr>
-					<tr>
-						<td>画心:</td>
-						<td><span id="result_print"></span>mm</td>
-					</tr>
-					<tr>
-						<td>卡纸:</td>
-						<td><span id="result_mat"></span>mm</td>
-					</tr>
-				</table>
-			</div>
-
-			</br></br>
-
-
 		</div>
 		
-		<div class="col-md-5">
-			<p></p>
-			<div class="canv">
-				<img id="preview" alt="" name="pic" />
-				<canvas id="cvsframe" width="270" height="270"></canvas>
-				</br></br>
+		<div class="col-md-6">
+			<div class="filled" style="background-color:#dbf0dd;">
+				<p></p>
+				<div class="canv">
+					<img id="preview" alt="" name="pic" />
+					<canvas id="cvsframe" width="270" height="270"></canvas>
+					</br></br>
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="filled" style="background-color:#eef0db;">
+				<p></p>
+
+				<canvas id="cvsotw" width="270" height="251"></canvas>
+
 				
 			</div>
-
-			
-		</div>
-		<div class="col-md-4">
-			<p></p>
-
-			<canvas id="cvsotw" width="270" height="251"></canvas>
-
-			
 		</div>
 
-	
 	</div>
 	
 	<!-- <div class="footer"><span>无措实验室</span> | <span>Framer</span></div> -->
