@@ -15,17 +15,16 @@
 <body style="background-color:#FFFFFF;color:#000000;" class="content4">
 	<div class="header">
 		<div class="logo" onClick="location.href='./pageTool.html'"></div>
-		</br>
-		<p></p>
-		<div  style="font-size:8pt">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;块</div>
+		<div id="subtitle">ABOUT ART WORK AND A LOT OF THINGS</div>
+		<!-- <div  style="font-size:8pt">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;块</div> -->
 		<!-- <div class="navbar-right"><img style="width:75px; height:30px" src="../resources/backToIndex.png"  onClick="location.href='./pageTool.html'"/></div> -->
 	</div>
 
-	<div class="container" style="margin-bottom:100px;">
+	<div class="container" style="margin-top:0px;margin-bottom:100px;">
 		<div class="col-md-3">
-			<div id="_btng1" class="filled" style="background-color:#bdefed;">
+			<div id="_btng1" class="filled" style="background-color:#ddffff;">
 					</br>
-					<table>
+					<table style="margin-top:35px;">
 						<tr>
 							<td><button id="mode" class="btnc"></button></td>
 							<td><button id="upload" class="btnc" data-toggle="modal" data-target="#uploaddialog" onclick="resetworkingarea();"></button></td>
@@ -113,7 +112,7 @@
 								<div class="modal-header">边框选择 | Frame Style</div>
 									<table>
 										<tr>
-											<td>边框颜色</td>
+											<td>颜色</td>
 											<td>
 												<div class="btn-group">
 													<button class="btn" onclick="framebordercolorchange('B');">Black</button>
@@ -125,11 +124,17 @@
 											</td>
 										</tr>
 										<tr>
-											<td>Frame Border Width</td>
+											<td>宽度</td>
 											<td>
-												<input type="text" id="borderwidth" value="5" />
+												<!-- <input type="text" id="borderwidth" value="5" /> -->
+												<div class="btn-group">
+													<button class="btn" onclick="borderwidthchange(4);">4</button>
+													<button class="btn" onclick="borderwidthchange(10);">10</button>
+													<button class="btn" onclick="borderwidthchange(20);">20</button>
+													<button class="btn" onclick="borderwidthchange(50);">50</button>
+												</div>
 											</td>
-											<td>(mm)</td>
+											<td><input type="text" id="borderwidth" value="4" />(mm)</td>
 										</tr>
 									</table>
 								<div class="modal-footer">
@@ -165,56 +170,93 @@
 							</div>
 						</div>
 					</div>
-				</br>
-				<div>
-					<table id="result_table">
-						<tr>
-							<td>边框:</td>
-							<td><span id="result_frame"></span>mm</td>
+					</br>
+				<div id="result_table_holder_desktop">
+					<table id="result_table_desktop">
+						<tr style="border-bottom:1px solid #000000;">
+							<td style="text-align:left;">幅面</td>
+							<td>卡纸</td>
+							<td>画心</td>
+							<td style="text-align:right;">边条</td>
 						</tr>
 						<tr>
-							<td>画心:</td>
-							<td><span id="result_print"></span>mm</td>
+							<td style="text-align:left;"><span name="result_frame_w"></span></td>
+							<td><span name="result_mat_w"></span></td>
+							<td><span name="result_print_w"></span></td>
+							<td style="text-align:right;"><span name="result_framewid">xxx</span></td>
 						</tr>
 						<tr>
-							<td>卡纸:</td>
-							<td><span id="result_mat"></span>mm</td>
+							<td style="text-align:left;"><span name="result_frame_h"></span></td>
+							<td><span name="result_mat_h"></span></td>
+							<td><span name="result_print_h"></span></td>
+							<td style="text-align:right;"><span name="result_framecol">xx</span></td>
 						</tr>
 					</table>
 				</div>
-
-				</br></br>
+				<p></p>
+				<div class="canv">
+					<canvas id="cvsframe_m" width="270" height="270"></canvas>
+					</br></br>
+				</div>
 			</div>
 		</div>
 		
 		<div class="col-md-6">
-			<div class="filled" style="background-color:#dbf0dd;">
+			<div id="div_center" class="filled" style="background-color:#f1fff9;">
 				<p></p>
-				<div class="canv">
+				</br></br>
+				</br></br>
+				<div class="canv" >
 					<img id="preview" alt="" name="pic" />
 					<canvas id="cvsframe" width="270" height="270"></canvas>
-					</br></br>
-					
 				</div>
 
 			</div>
 		</div>
 
 		<div class="col-md-3">
-			<div class="filled" style="background-color:#eef0db;">
+			<div class="filled" id="otwgroup" style="background-color:#fffff2;">
 				<p></p>
+				<div id="result_table_holder_mobile">
+					<table id="result_table_mobile">
+						<tr style="border-bottom:1px solid #000000;">
+							<td style="text-align:left;">幅面</td>
+							<td>卡纸</td>
+							<td>画心</td>
+							<td style="text-align:right;">边条</td>
+						</tr>
+						<tr>
+							<td style="text-align:left;"><span name="result_frame_w"></span></td>
+							<td><span name="result_mat_w"></span></td>
+							<td><span name="result_print_w"></span></td>
+							<td style="text-align:right;"><span name="result_framewid">xxx</span></td>
+						</tr>
+						<tr>
+							<td style="text-align:left;"><span name="result_frame_h"></span></td>
+							<td><span name="result_mat_h"></span></td>
+							<td><span name="result_print_h"></span></td>
+							<td style="text-align:right;"><span name="result_framecol">xx</span></td>
+						</tr>
+					</table>
+				</div>
+				<div id="spacing_col3">
+					</br></br></br></br>
+				</div>
 
-				<canvas id="cvsotw" width="270" height="251"></canvas>
-
-				
+				<div>
+					<canvas id="cvsotw" width="270" height="251" ></canvas>
+				</div>
+				</br></br>
 			</div>
 		</div>
-
 	</div>
 	
 	<!-- <div class="footer"><span>无措实验室</span> | <span>Framer</span></div> -->
-	<script src="../javascripts/scale.fix.js"></script>
+	<script src="../javascripts/scale-framer.js"></script>
 	<script src="../javascripts/FramerJS20170619.js"></script>
+	<script>
+		framerMobileMode();
+	</script>
 
 </body>
 </html>

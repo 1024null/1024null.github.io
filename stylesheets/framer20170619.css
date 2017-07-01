@@ -1,31 +1,40 @@
 .header{
 	text-align: center;
 	margin: auto;
-	height: 82px;
+	height: 60px;
 	display:block;
 	width: 100%;
-	background: #565656;
+	background: #FFFFFF;
 	margin:auto;
 	text-align:center;
 	vertical-align:center;
 	align-content: center;
 }
 .logo{
-	background-image: url(../resources/UP320-W.png);
+	background-image: url(../resources/UP-R.png);
 	background-size: cover;
 	background-repeat: no-repeat;
-	width:320px;
-	height: 31px;
+	width:70px;
+	height: 50px;
 	font-size: 18pt;
 	color: #ffffff;
 	
 	margin:auto;
 	text-align:center;
-	vertical-align:center;
 	align-content: center;
-	margin-top: 18px;
-
+	margin-top: 30px;
 }
+
+#subtitle{
+	margin-top:6px;
+	color: #000000;
+	font-size:5.5pt;
+	height:14px;
+
+	font-family:"Helvetica";
+	font-weight: lighter;
+}
+
 
 
 a:hover {
@@ -84,17 +93,7 @@ img{
 	border:2px solid #999999;
 	padding: 15px;
 }
-.btnc{
-	margin:2px;
-	background-color:#565656;
-	border-radius: 30px;
-	height: 30px;
-	width: 30px;
-	
-}
-.btnc:hover{
-	background-color:#FFFFFF;
-}
+
 .opt{
 	color: #FF0000;
 }
@@ -146,7 +145,8 @@ input{
 	text-align:center;
 	vertical-align:center;
 	align-content: center;
-	display: none;
+
+	/*display: none;*/
 }
 
 
@@ -160,7 +160,7 @@ input{
 	border-radius: 15px;
 }
 
-#cvsframe{
+#cvsframe,#cvsframe_m{
 	display: block;
 	
 	margin:auto;
@@ -175,14 +175,18 @@ input{
 	margin:auto;
 	text-align:center;
 	vertical-align:center;
-	align-content: center;
+	align-content:center;
 }
 
 /* Umi Added 20170629*/
 .filled{
 	margin:2.5px;
-	height: 300px;
+	min-height:450px;
+	border-radius: 3px;
+}
 
+#otwgroup{
+	max-height: 450px;
 }
 
 .col-md-3{
@@ -199,31 +203,60 @@ input{
 }
 
 #mode{
-	background-color: #d7e7e5;
-	border: 1px solid #d7e7e5;
+	background-color: #d9d9d9;
+	border: 1px solid #d9d9d9;
 }
 
 #upload{
-	background-color: #cfdedd;
-	border: 1px solid #cfdedd;
+	background-color: #c7c7c7;
+	border: 1px solid #c7c7c7;
 }
 
 #sizebase{
-	background-color: #cfdedc;
-	border: 1px solid #cfdedc;
+	background-color: #b8b8b8;
+	border: 1px solid #b8b8b8;
 }
 
 #matbase{
-	background-color: #cddddb;
-	border: 1px solid #cddddb;
+	background-color: #ababab;
+	border: 1px solid #ababab;
 }
 
 #framebase{
-	background-color: #ccdbda;
-	border: 1px solid #ccdbda;
+	background-color: #a1a1a1;
+	border: 1px solid #a1a1a1;
 }
 
 #btnpreview{
-	background-color: #c8d7d6;
-	border: 1px solid #c8d7d6;
+	background-color: #999999;
+	border: 1px solid #999999;
 }
+.btnc{
+	margin:2px;
+	border-radius: 30px;
+	height: 30px;
+	width: 30px;
+	
+}
+.btnc:hover{
+	background-color:#FFFFFF;
+}
+
+#result_table_holder_mobile{
+	padding: 40px;
+	display: none;
+}
+#result_table_holder_desktop{
+	padding: 40px;
+	display: none;
+}
+
+#borderwidth{
+	max-width:20px;
+	border:0px;
+}
+
+#result_table_mobile{
+	margin-top:30px;
+}
+

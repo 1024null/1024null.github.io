@@ -21,7 +21,7 @@ var ph; //print height
 var scale; // image width/height
 
 
-var b=5; //frame border width
+var b=4; //frame border width
 var mv = 50; //mat ceiling vertical
 var mh = 50; //mat ceiling horizontal
 
@@ -187,20 +187,46 @@ function changematsstatus(sta){
 }
 
 function loadresult(fw,fh,pw,ph){
-    document.getElementById("result_table").style['display'] = "block";
+
+
+
+    //document.getElementById("result_table").style['display'] = "block";
+    /*
     var rf = document.getElementById("result_frame");
     var rp = document.getElementById("result_print");
     var pm = document.getElementById("result_mat");
+
+    rf.innerHTML = fw + "x" + fh; 
+    rp.innerHTML = parseInt(pw) + "x" + parseInt(ph); 
+    pm.innerHTML = (parseInt(pw)+20) + "x" + (parseInt(ph)+20); 
+
+    */
     
 /*
     rf.innerHTML = fw + "x" + fh; 
     rp.innerHTML = parseFloat(pw).toFixed(2) + "x" + parseFloat(ph).toFixed(2); 
     pm.innerHTML = (parseFloat(pw)+20).toFixed(2) + "x" + (parseFloat(ph)+20).toFixed(2); 
 */
-    rf.innerHTML = fw + "x" + fh; 
-    rp.innerHTML = parseInt(pw) + "x" + parseInt(ph); 
-    pm.innerHTML = (parseInt(pw)+20) + "x" + (parseInt(ph)+20); 
+    sendinnerhtmlsbyname("result_frame_w",fw);
+    sendinnerhtmlsbyname("result_frame_h",fh);
 
+    sendinnerhtmlsbyname("result_print_w",parseInt(pw));
+    sendinnerhtmlsbyname("result_print_h",parseInt(ph));
+
+    sendinnerhtmlsbyname("result_mat_w",(parseInt(pw)+20));
+    sendinnerhtmlsbyname("result_mat_h",(parseInt(ph)+20));
+
+    sendinnerhtmlsbyname("result_framewid",b+"&nbsp;&nbsp;");
+
+    if(framebordercolor == "#000000"){
+        sendinnerhtmlsbyname("result_framecol","黑色");
+    }
+    else if(framebordercolor == "#FFFFFF"){
+        sendinnerhtmlsbyname("result_framecol","白色");
+    }
+    else{
+
+    }
 }
 
 
@@ -217,6 +243,14 @@ function framebordercolorchange(color){
 
     }
 }
+
+
+//20170701 Umi Added 
+function borderwidthchange(boardwidth){
+    b = boardwidth;
+    document.getElementById("borderwidth").value = b;
+}
+
 
 function calculateprintandframesize(){
     //Check users have had the picture uploaded and fill the longside size
@@ -312,10 +346,12 @@ function drawonratio(ceiling){
     else{
         calculateprintandframesize();
         drawframepreview("cvsframe",5,5,260/w,true);
+        drawframepreview("cvsframe_m",5,5,260/w,true);
 
         loadresult(w,h,pw,ph);
 
         otw();
+        revealtablearea();
 
     }
     
@@ -323,8 +359,39 @@ function drawonratio(ceiling){
 
 function resetworkingarea(){
     document.getElementById("cvsframe").getContext("2d").height = document.getElementById("cvsframe").getContext("2d").height;
-    document.getElementById("result_table").style['display'] = "none";
+    document.getElementById("cvsframe_m").getContext("2d").height = document.getElementById("cvsframe_m").getContext("2d").height;
+
+    //document.getElementById("result_table").style['display'] = "none";
+    hidetablearea();
 }
+
+
+function hidetablearea(){
+    if (navigator.userAgent.toLowerCase().match(/iPhone/i) || navigator.userAgent.toLowerCase().match(/android/i)) {
+        document.getElementById("result_table_holder_mobile").style['display'] = "none";
+        document.getElementById("result_table_holder_desktop").style['display'] = "none";        
+    }
+    else{
+        document.getElementById("result_table_holder_mobile").style['display'] = "none";
+        document.getElementById("result_table_holder_desktop").style['display'] = "none";
+    }
+}
+
+function revealtablearea(){
+    if (navigator.userAgent.toLowerCase().match(/iPhone/i) || navigator.userAgent.toLowerCase().match(/android/i)) {
+        document.getElementById("result_table_holder_mobile").style['display'] = "block";
+        document.getElementById("result_table_holder_desktop").style['display'] = "none";        
+    }
+    else{
+        document.getElementById("result_table_holder_mobile").style['display'] = "none";
+        document.getElementById("result_table_holder_desktop").style['display'] = "block";
+    }
+
+}
+
+
+
+
 
 function  otw(){
     
@@ -333,7 +400,8 @@ function  otw(){
     var ctxowt = canvas2.getContext('2d');
     ctxowt.height = ctxowt.height;
 
-    ctxowt.fillStyle = "#FDFFF6";
+    //ctxowt.fillStyle = "#FDFFF6";
+    ctxowt.fillStyle = "#FFFFF2";
     ctxowt.fillRect(0,0,270,251);
 
 
@@ -345,8 +413,22 @@ function  otw(){
     drawframepreview("cvsotw",offsetx,offsety,0.085,false);
 
     ctxowt.drawImage(imageotw,5,5);
+}
 
 
-    
+//Umi added @ 20170630
+function sendvaluesbyname(name,value){
+    var list = document.getElementsByName(name);
+    for (var i = list.length - 1; i >= 0; i--) {
+        list[i].value = value;
+    }
+    // document.getElementById("ao").value = "ao";
+}
 
+function sendinnerhtmlsbyname(name,value){
+    var list = document.getElementsByName(name);
+    for (var i = list.length - 1; i >= 0; i--) {
+        list[i].innerHTML = value;
+    }
+    // document.getElementById("ao").value = "ao";
 }
