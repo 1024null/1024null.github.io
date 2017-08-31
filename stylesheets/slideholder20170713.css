@@ -1,0 +1,111 @@
+#t31,#t51,#t41,#t14,#t24,#t34{
+    border-right: 0.5px solid #000000;
+}   
+#t13,#t14,#t15,#t41,#t42,#t43,#t44,#t45{
+    border-bottom: 0.5px solid #000000;
+}
+
+.slideholder td{
+    width: 20px;
+    height:20px;
+}
+#t33{
+    width: 140px;
+    height:140px;
+}
+
+.slideholder{
+    margin:auto;
+    /*margin-top: 60px;*/
+
+}
+
+@keyframes fadeout{
+	0%{opacity:1;}
+	25%{opacity:.5;}
+	75%{opacity:.1;}
+	100%{opacity:0;}
+}
+@keyframes fadein{
+	0%{opacity:0;}
+	20%{opacity:.1;}
+	40%{opacity:.3;}
+	60%{opacity:.5;}
+	80%{opacity:.8;}
+	90%{opacity:.9;}
+	100%{opacity:1;}
+}
+/* Umi added 20170716*/
+@keyframes fadein1{
+	0%{opacity:0;}
+	20%{opacity:.1;}
+	40%{opacity:.2;}
+	50%{opacity:.3;}
+	60%{opacity:.7;}
+	80%{opacity:.8;}
+	90%{opacity:.9;}
+	100%{opacity:1;}
+}
+@keyframes fadein2{
+	0%{opacity:0;}
+	20%{opacity:.1;}
+	40%{opacity:.2;}
+	50%{opacity:.3;}
+	60%{opacity:.7;}
+	80%{opacity:.8;}
+	90%{opacity:.9;}
+	100%{opacity:1;}
+}
+
+@-moz-keyframes fadein1{
+	0%{opacity:0;}
+	20%{opacity:.1;}
+	40%{opacity:.2;}
+	50%{opacity:.3;}
+	60%{opacity:.7;}
+	80%{opacity:.8;}
+	90%{opacity:.9;}
+	100%{opacity:1;}
+}
+@-moz-keyframes fadein2{
+	0%{opacity:0;}
+	20%{opacity:.1;}
+	40%{opacity:.2;}
+	50%{opacity:.3;}
+	60%{opacity:.7;}
+	80%{opacity:.8;}
+	90%{opacity:.9;}
+	100%{opacity:1;}
+}
+/* Umi added 20170716*/
+
+@keyframes blink{
+	0%{opacity:1;}
+	10%{opacity:.5;}
+	20%{opacity:.3;}
+	30%{opacity:0;}
+	40%{opacity:.1;}
+	50%{opacity:.3;}
+	60%{opacity:.5;}
+	70%{opacity:.7;}
+	80%{opacity:.9;}
+	90%{opacity:.95;}
+	100%{opacity:1;}
+}
+
+
+.navi-buttons{
+    margin:auto;
+    margin-top: 10px;
+}
+
+.navi-buttons td{
+	padding:10px;
+}
+
+.navibtns{
+	border:0.5px solid #000000;
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+}

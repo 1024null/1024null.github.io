@@ -4,62 +4,135 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>無措</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/fonts.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+	<link rel="stylesheet" href="stylesheets/fonts.css">
+    <link rel="stylesheet" href="stylesheets/main20170711.css">
   </head>
-<body>
-<div class="wrapper" style="margin-top:50px;">
-      <header>
-        <div align="center">
-          <img style="margin:auto" src="./resources/LOGO100x100.jpg" width="100" height="100"/>
-          <h1 id="brand"><div class="cht-hanyi">无措实验室</div></h1>
-          <p>Alternative Photographic Lab</p>
-        </div>
-      </header>
-<section>
-<h3>
-<a id="gallery" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span>画廊 · Gallery</a></h3>
-<!-- <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gallery</h3> -->
-<p>@ Under Construction.</p>
-<p><a href="./Pages/pageGallery.html">Go to..</a></p>
-<h3>
-<a id="archives" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span>资料 · Archives</a></h3>
+<body class="content5" >
 
-<p><h4><a class="content3" href="">资料涉及的领域包括：</br>古典工艺,银盐,现代数码,照相制品的存储,展示方式等。</br></br>一些国外的优秀文献等也会收录在此。</br></br></a><a href="./Pages/archive/pagearchiveclassic.html">Go to..</a></h4></p>
+<div class="container" id="outter" style="border:1px solid #000000;height:750px;width:1038px;">
+
+	<div class="nav navbar-default" id="headerdesktop">
+		<table class="header">
+			<tr>
+				<td class="left">
+					<img src="./resources/UP-BW.png" alt="">
+				</td>
+				<td class="center"></td>
+				<td class="right"></td>
+			</tr>
+		</table>
+	</div>
 
 
-<h3>
-<a id="tools" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span>工具 · Tools</a></h3>
-<p class="content3">我们提供简单实用的线上工具，帮助简化繁琐的计算。</p>
-<p>@Still under construction....
-<p><a href="./Pages/pageTool.html">Go to..</a></p>
+	<div class="container" style="width:100%;">
+		<div class="col-md-5">
+			<div class="horizontalline"></div>
+			<table class="navipad">
+				<tr>
+					<td><div class="navipadbtn" name="navipadbtn" onmouseenter="showdescription(0);" onmouseleave="showdescription(-1);" onclick="navto(0);"><span class="navilabel">聯係方式</span></div></td>
+					<td><div class="navipadbtn" name="navipadbtn" onmouseenter="showdescription(1);" onmouseleave="showdescription(-1);" onclick="navto(1);"><span class="navilabel">設備集</span></div></td>
+					<td><div class="navipadbtn" name="navipadbtn" onmouseenter="showdescription(2);" onmouseleave="showdescription(-1);" onclick="navto(2);"><span class="navilabel">工具集</span></div></td>
+					<td><div class="navipadbtn" name="navipadbtn" onmouseenter="showdescription(3);" onmouseleave="showdescription(-1);" onclick="navto(3);"><span class="navilabel">文献</span></div></td>
+					<td><div class="navipadbtn" name="navipadbtn" onmouseenter="showdescription(4);" onmouseleave="showdescription(-1);" onclick="navto(4);"><span class="navilabel">展廳</span></div></td>
+				</tr>
+			</table>
+		</div>
 
-<h3>
-<a id="contact-us" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span>设备 · Devices</a></h3>
+		<div class="col-md-2" style="z-index:-5;">
+			<div class="spacingline"></div>
+		</div>
 
-<p><h4><a class="content3" href="">Shooting · 拍摄</a></h4></p>
-<p><h4><a class="content3" href="">Darkroom · 暗房</a></h4></p>
+		<div class="col-md-5">
+			<!-- 
+			<table class="description">
+				<tr>
+					<td class="picdescription"></td>
+				</tr>
+				<tr>
+					<td class="textdescription">
+						<p class="textdescription-text" id="textdescription-text">NULL STUDIO</p>
+					</td>
+				</tr>
+			</table>
+			-->
 
-<h3>
-<a id="contact-us" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span>联系我们 · Contact Us</a></h3>
+			<div class="description" name="description" id="contact-us">CONTACT US</div>
 
-<p><a class="content3">Tel: 18740072526</br>Addr: iDTOWN international art district | Build 10 #24</a></p>
+			<div class="description" name="description" id="equipment">EQUIPMENT</div>
 
+			<div class="description" name="description" id="tools">
+				<table id="d-tools">
+					<tr>
+						<td>
+							<img id="pic-tools" src="./resources/tools20170728.jpg" alt="TOOLS">
+						</td>
+					</tr>
+				</table>
+			</div>
 
-<!-- <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p> -->
-</section>
-<footer>
-  <p><small>Hosted on GitHub Pages</small></p>
-</footer>
+			<div class="description" name="description" id="archives">
+				<table id="d-archives">
+					<tr>
+						<td class="a-left">
+							<div id="a-l" class="a-container">
+								<p class="a-l-description">Classic</p>
+								<p class="a-l-description">Silver</p>
+								<p class="a-l-description">Modern Digital</p>
+								<p class="a-l-description">Storage</p>
+								<p class="a-l-description">Exhibition</p>
+								<p class="a-l-description">Others</p>
+							</div>
+						</td>
+						<td class="a-center">
+							<div id="a-c"></div>
+						</td>
+						<td class="a-right">
+							<div id="a-r" class="a-container">
+								<p class="a-r-description">古典工藝</p>
+								<p class="a-r-description">銀鹽</p>
+								<p class="a-r-description">現代數碼</p>
+								<p class="a-r-description">存儲包裝</p>
+								<p class="a-r-description">展覽展示</p>
+								<p class="a-r-description">其他</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="description" name="description" id="gallery">
+				<table id="d-gallery">
+					<tr>
+						<td class="g-left">
+							<div id="l1" class="g-container">2:3</div>
+							<div id="l2" class="g-container">4:5</div>
+							<div id="l3" class="g-container">1:1</div>
+						</td>
+						<td class="g-right">
+							<div id="r1" class="g-container">5:7</div>
+							<div id="r2" class="g-container">4:5</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<!-- Defalut Display -->
+			<div class="description active" name="description" id="default">
+				<p class="textdescription-text" id="textdescription-text">NULL STUDIO</p>
+			</div>
+
+		</div>
+	</div>
 
 </div>
-<script src="javascripts/scale.fix.js"></script>
-    
+
+<script src="javascripts/switch.js"></script>
+<script src="javascripts/index_desktop.js"></script>
+<script type="text/javascript">
+  d2m("index");
+  automarginverticaldesktop();
+</script>  
 </body>
 </html>

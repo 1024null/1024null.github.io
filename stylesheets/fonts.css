@@ -18,6 +18,18 @@
   src: url('../resources/fonts/CHT-HYQTS.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Canela';
+  src: url('../resources/fonts/canela_light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceHanSerifJP-ExtraLight';
+  src: url('../resources/fonts/SourceHanSerifJP-ExtraLight.otf') format('truetype');
+}
+
+
+
 
 #brand {
 	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
@@ -55,4 +67,17 @@
 	font-family:"Local FZ Song","Bitstream Vera Sans Mono";
 	font-weight: light;
 	color:#FFFFFF;
+}
+.content5{
+	font-family:"Canela";
+	letter-spacing: 2px;
+	font-weight: lighter;
+	color:#000000;
+}
+
+.content6{
+	font-family:"SourceHanSerifJP-ExtraLight";
+	letter-spacing: 2px;
+	font-weight: lighter;
+	color:#000000;
 }

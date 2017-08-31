@@ -1,0 +1,305 @@
+.nav{
+	background-color:#FFFFFF;
+}
+table.header{
+	margin:auto;
+	text-align: center;
+	height: 158px;
+	width: 100%;
+}
+
+td.left{
+	width: 20%;
+}
+
+td.center{
+	width: 60%;
+}
+
+td.right{
+	width: 20%;
+}
+
+.left img{
+	width: 55px;
+	margin-left: 40px;
+}
+
+.header td{
+	padding-top: 110px;
+}
+
+
+
+
+
+.spacingline{
+	height: 469px;
+	width:  1px;
+	background-color: #000000;
+	margin: auto;
+	text-align: center;
+}
+
+.horizontalline{
+	width:300px;
+	height: 1px;
+	margin-left: 70px;
+	margin-top: 100px;
+	background-color: #000000;
+}
+table.navipad{
+	width: 70%;
+	height:80px;
+	margin-left: 43px;
+}
+
+.navipad td{
+	height: 130px;
+	vertical-align: top;
+
+}
+
+.navipadbtn{
+	padding: 25px;
+
+}
+
+.navipadbtn:hover{
+	animation: appearancechange 1.5s linear;
+}
+
+
+span.navilabel{
+	width: 15px;
+	text-decoration: none;
+	color:#000000;
+	font-size: 14pt;
+	line-height: 2px;
+	font-family: 'SourceHanSerifJP-ExtraLight';
+	margin: auto;
+	text-align: center;
+}
+
+/*Obslated*/
+/*
+table.description{
+	margin:auto;
+	text-align: center;
+	margin-top: 28px;
+}
+
+.description td{
+	padding: 50px;
+}
+.textdescription-text{
+	font-size: 30pt;
+}
+*/
+/*Obslated*/
+
+/*Umi added @ 20170728*/
+
+.description{
+	display: none;
+}
+
+.description.active{
+	display: block;
+}
+
+.textdescription-text{
+	margin-top:130px;
+	margin-left: 50px;
+	font-size: 30pt;
+}
+
+#d-tools{
+    margin:15px;
+    margin-top:46px;
+    width:276.8px;
+    height: 328.7px;
+    /*border:1px solid #000000;*/
+}
+
+#pic-tools{
+    width:100%;
+}
+
+#d-archives{
+    margin:15px;
+    margin-top:25px;
+    width:276.8px;
+    height: 328.7px;
+    /*border:1px solid #000000;*/
+}
+.a-container{
+	/*border:1px solid #559955;*/
+	margin:5px;
+}
+
+#a-l{
+	width: 157.43px;
+}
+#a-r{
+	width: 102.07px;
+}
+#a-c{
+	margin-top: -8px;
+	width: 1px;
+	height:225px;
+	background-color: #000000;
+}
+.a-l-description{
+	text-align: right;
+}
+
+.a-l-description,.a-r-description{
+	font-size: 12pt;
+	padding:5px;
+}
+
+
+#d-gallery{
+    margin:15px;
+    margin-top:46px;
+    width:276.8px;
+    height: 328.7px;
+    border:1px solid #000000;
+}
+.g-container{
+	border:1px solid #559955;
+	margin:5px;
+}
+#l1{
+	width: 102.07px;
+	height: 68.45px;
+	margin-bottom: 8px;
+}
+#l2{
+	width: 102.07px;
+	height: 127.5875px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+#l3{
+	width: 102.07px;
+	height: 102.07px;
+	margin-top: 8px;
+}
+#r1{
+	width: 157.43px;
+	height: 112.45px;
+	margin-left: 0px;
+}
+#r2{
+	width: 157.43px;
+	height: 196.7875px;
+	margin-left: 0px;
+}
+
+/*Umi added @ 20170728*/
+
+@keyframes fadein1{
+	0%{margin-top: -10px;}
+	20%{margin-top: -8px;}
+	40%{margin-top: -7px;}
+	60%{margin-top: -3px;}
+	80%{margin-top: -1px;}
+	100%{margin-top: 0px;}
+}
+@keyframes fadein2{
+	0%{margin-top: -10px;}
+	20%{margin-top: -8px;}
+	40%{margin-top: -7px;}
+	60%{margin-top: -3px;}
+	80%{margin-top: -1px;}
+	100%{margin-top: 0px;}
+}
+@keyframes fadein3{
+	0%{margin-top: 5px;}
+	20%{margin-top: 4px;}
+	40%{margin-top: 3px;}
+	60%{margin-top: 2px;}
+	80%{margin-top: 1px;}
+	100%{margin-top: 0px;}
+}
+
+@keyframes fadeinopacity1{
+	0%{opacity: 0;}
+	20%{opacity: .1;}
+	40%{opacity: .2;}
+	60%{opacity: .6;}
+	80%{opacity: .9;}
+	100%{opacity: 1;}
+}
+@keyframes fadeinopacity2{
+	0%{opacity: 0;}
+	20%{opacity: .1;}
+	40%{opacity: .2;}
+	60%{opacity: .6;}
+	80%{opacity: .9;}
+	100%{opacity: 1;}
+}
+
+
+@keyframes appearancechange{
+	0%{opacity: 0;}
+	20%{opacity: .3;}
+	40%{opacity: .4;}
+	60%{opacity: .8;}
+	80%{opacity: .9;}
+	100%{opacity: 1;}
+}
+
+@-webkit-keyframes fadein1{
+	0%{margin-top: -10px;}
+	20%{margin-top: -8px;}
+	40%{margin-top: -7px;}
+	60%{margin-top: -3px;}
+	80%{margin-top: -1px;}
+	100%{margin-top: 0px;}
+}
+@-webkit-keyframes fadein2{
+	0%{margin-top: -10px;}
+	20%{margin-top: -8px;}
+	40%{margin-top: -7px;}
+	60%{margin-top: -3px;}
+	80%{margin-top: -1px;}
+	100%{margin-top: 0px;}
+}
+@-webkit-keyframes fadein3{
+	0%{margin-top: 5px;}
+	20%{margin-top: 4px;}
+	40%{margin-top: 3px;}
+	60%{margin-top: 2px;}
+	80%{margin-top: 1px;}
+	100%{margin-top: 0px;}
+}
+
+@-webkit-keyframes fadeinopacity1{
+	0%{opacity: 0;}
+	20%{opacity: .1;}
+	40%{opacity: .2;}
+	60%{opacity: .6;}
+	80%{opacity: .9;}
+	100%{opacity: 1;}
+}
+@-webkit-keyframes fadeinopacity2{
+	0%{opacity: 0;}
+	20%{opacity: .1;}
+	40%{opacity: .2;}
+	60%{opacity: .6;}
+	80%{opacity: .9;}
+	100%{opacity: 1;}
+}
+
+
+@-webkit-keyframes appearancechange{
+	0%{opacity: 0;}
+	20%{opacity: .3;}
+	40%{opacity: .4;}
+	60%{opacity: .8;}
+	80%{opacity: .9;}
+	100%{opacity: 1;}
+}
